@@ -1,5 +1,9 @@
 package io.akryl.dom.html
 
+import io.akryl.dom.css.CssElement
+import io.akryl.dom.css.StyleProperty
+import io.akryl.dom.css.cssRegistry
+import io.akryl.dom.css.toStyleJson
 import org.w3c.dom.events.Event
 import react.MutableRefObject
 import react.React.createElement
@@ -9,21 +13,16 @@ import kotlin.js.json
 fun html(
     tag: String,
     attributes: Map<String, Any?> = emptyMap(),
-    style: Map<String, String?> = emptyMap(),
+    style: List<StyleProperty?>? = null,
+    css: List<CssElement?>? = null,
     listeners: Map<String, (event: Event) -> Unit> = emptyMap(),
     children: Iterable<ReactElement<*>?>? = null,
     innerHtml: String? = null,
     key: Any? = null,
     ref: MutableRefObject<*>? = null
 ): ReactElement<*> {
-    val styleProps = if (style.isNotEmpty()) js("{}") else undefined
-
-    for ((k, v) in style) {
-        if (v != null) styleProps[k] = v
-    }
-
     val props = js("{}")
-    props["style"] = styleProps
+    props["style"] = style?.toStyleJson() ?: undefined
 
     for ((k, v) in attributes) {
         if (v != null) props[k] = v
@@ -44,6 +43,12 @@ fun html(
     if (ref != null) {
         props["ref"] = ref
     }
+
+    val cssClassName = cssRegistry.findOrCreateClassName(css)
+    props["className"] = listOfNotNull(attributes["className"], cssClassName)
+        .takeIf { it.isNotEmpty() }
+        ?.joinToString(" ")
+        ?: undefined
 
     return createElement(tag, props, *(children?.toList()?.toTypedArray() ?: emptyArray()))
 }
