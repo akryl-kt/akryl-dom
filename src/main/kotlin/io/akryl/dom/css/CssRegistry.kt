@@ -30,20 +30,20 @@ class DomCssRegistry {
 
     private fun injectCss(selector: String, css: List<CssElement?>) {
         val str = buildString {
-            buildCss(selector, css)
+            appendCss(selector, css)
         }
         val el = document.createElement("style")
         el.innerHTML = str
         document.head?.appendChild(el)
     }
 
-    private fun StringBuilder.buildCss(selector: String, css: List<CssElement?>) {
+    private fun StringBuilder.appendCss(selector: String, css: List<CssElement?>) {
         append(selector)
         append(" {")
-        for ((k, v) in css.filterIsInstance<StyleProperty>()) {
-            append(k)
+        for (prop in css.filterIsInstance<AbstractStyleProperty>()) {
+            appendCssKey(prop.key)
             append(':')
-            append(v)
+            append(prop.value)
             append(';')
         }
         append('}')
@@ -51,7 +51,19 @@ class DomCssRegistry {
         for (inner in css.filterIsInstance<SelectorStyles>()) {
             val innerSelector = inner.selector.replace("&", selector)
             append(' ')
-            buildCss(innerSelector, inner.elements)
+            appendCss(innerSelector, inner.elements)
+        }
+    }
+
+    private fun StringBuilder.appendCssKey(key: String) {
+        for (c in key) {
+            val lower = c.toLowerCase()
+            if (lower != c) {
+                append('-')
+                append(lower)
+            } else {
+                append(c)
+            }
         }
     }
 }

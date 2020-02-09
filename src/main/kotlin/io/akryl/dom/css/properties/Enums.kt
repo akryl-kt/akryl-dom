@@ -1,0 +1,378 @@
+@file:Suppress("ClassName", "unused", "EnumEntryName")
+
+package io.akryl.dom.css.properties
+
+import io.akryl.dom.css.PropertyBuilder
+
+enum class Horizontal {
+    left,
+    center,
+    right,
+}
+
+enum class Vertical {
+    top,
+    center,
+    bottom
+}
+
+object textAlign : PropertyBuilder("textAlign") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun left() = this("left")
+    fun right() = this("right")
+    fun center() = this("center")
+    fun justify() = this("justify")
+    fun justifyAll() = this("justify-all")
+    fun start() = this("start")
+    fun end() = this("end")
+    fun matchParent() = this("match-parent")
+}
+
+object boxSizing : PropertyBuilder("boxSizing") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun contentBox() = this("content-box")
+    fun borderBox() = this("border-box")
+}
+
+object fontStyle : PropertyBuilder("fontStyle") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun normal() = this("normal")
+    fun italic() = this("italic")
+    fun oblique() = this("oblique")
+}
+
+object listStyleType : PropertyBuilder("listStyleType") {
+    fun none() = this("none")
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun disc() = this("disc")
+    fun armenian() = this("armenian")
+    fun circle() = this("circle")
+    fun cjkIdeographic() = this("cjk-ideographic")
+    fun decimal() = this("decimal")
+    fun decimalLeadingZero() = this("decimal-leading-zero")
+    fun georgian() = this("georgian")
+    fun hebrew() = this("hebrew")
+    fun hiragana() = this("hiragana")
+    fun hiraganaIroha() = this("hiragana-iroha")
+    fun katakana() = this("katakana")
+    fun katakanaIroha() = this("katakana-iroha")
+    fun lowerAlpha() = this("lower-alpha")
+    fun lowerGreek() = this("lower-greek")
+    fun lowerLatin() = this("lower-latin")
+    fun lowerRoman() = this("lower-roman")
+    fun square() = this("square")
+    fun upperAlpha() = this("upper-alpha")
+    fun upperGreek() = this("upper-greek")
+    fun upperLatin() = this("upper-latin")
+    fun upperRoman() = this("upper-roman")
+}
+
+object display : PropertyBuilder("display") {
+    fun none() = this("none")
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun contents() = this("contents")
+
+    fun block() = this("block")
+    fun `inline`() = this("inline")
+    fun runIn() = this("run-in")
+
+    fun flow() = this("flow")
+    fun flowRoot() = this("flow-root")
+    fun table() = this("table")
+    fun flex() = this("flex")
+    fun grid() = this("grid")
+    fun subgrid() = this("subgrid")
+
+    fun listItem() = this("list-item")
+
+    fun tableRowGroup() = this("table-row-group")
+    fun tableHeaderGroup() = this("table-header-group")
+    fun tableFooterGroup() = this("table-footer-group")
+    fun tableRow() = this("table-row")
+    fun tableCell() = this("table-cell")
+    fun tableColumnGroup() = this("table-column-group")
+    fun tableColumn() = this("table-column")
+    fun tableCaption() = this("table-caption")
+
+    fun inlineBlock() = this("inline-block")
+    fun inlineListItem() = this("inline-list-item")
+    fun inlineTable() = this("inline-table")
+    fun inlineFlex() = this("inline-flex")
+    fun inlineGrid() = this("inline-grid")
+}
+
+object wordBreak : PropertyBuilder("wordBreak") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun normal() = this("normal")
+    fun breakAll() = this("break-all")
+    fun keepAll() = this("keep-all")
+    fun breakWord() = this("break-word")
+}
+
+object alignContent : PropertyBuilder("alignContent") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun stretch() = this("stretch")
+    fun center() = this("center")
+    fun flexStart() = this("flex-start")
+    fun flexEnd() = this("flex-end")
+    fun spaceBetween() = this("space-between")
+    fun spaceAround() = this("space-around")
+}
+
+object alignItems : PropertyBuilder("alignItems") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun stretch() = this("stretch")
+    fun center() = this("center")
+    fun flexStart() = this("flex-start")
+    fun flexEnd() = this("flex-end")
+    fun baseline() = this("baseline")
+}
+
+object alignSelf : PropertyBuilder("alignSelf") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun auto() = this("auto")
+    fun stretch() = this("stretch")
+    fun center() = this("center")
+    fun flexStart() = this("flex-start")
+    fun flexEnd() = this("flex-end")
+    fun baseline() = this("baseline")
+}
+
+object extend : PropertyBuilder("extend") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun borderBox() = this("border-box")
+    fun paddingBox() = this("padding-box")
+    fun contentBox() = this("content-box")
+}
+
+object backgroundAttachment : PropertyBuilder("backgroundAttachment") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun scroll() = this("scroll")
+    fun fixed() = this("fixed")
+    fun local() = this("local")
+}
+
+object blendMode : PropertyBuilder("blendMode") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun normal() = this("normal")
+    fun multiply() = this("multiply")
+    fun screen() = this("screen")
+    fun overlay() = this("overlay")
+    fun darken() = this("darken")
+    fun lighten() = this("lighten")
+    fun colorDodge() = this("color-dodge")
+    fun saturation() = this("saturation")
+    fun color() = this("color")
+    fun luminosity() = this("luminosity")
+}
+
+object position : PropertyBuilder("position") {
+    fun static() = this("static")
+    fun absolute() = this("absolute")
+    fun fixed() = this("fixed")
+    fun relative() = this("relative")
+    fun sticky() = this("sticky")
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+}
+
+object fontWeight : PropertyBuilder("fontWeight") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun normal() = this("normal")
+    fun bold() = this("bold")
+    fun bolder() = this("bolder")
+    fun lighter() = this("lighter")
+    fun w900() = this("900")
+    fun w800() = this("800")
+    fun w700() = this("700")
+    fun w600() = this("600")
+    fun w500() = this("500")
+    fun w400() = this("400")
+    fun w300() = this("300")
+    fun w200() = this("200")
+    fun w100() = this("100")
+}
+
+object flexDirection : PropertyBuilder("flexDirection") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun row() = this("row")
+    fun rowReverse() = this("row-reverse")
+    fun column() = this("column")
+    fun columnReverse() = this("column-reverse")
+}
+
+object flexWrap : PropertyBuilder("flexWrap") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun nowrap() = this("nowrap")
+    fun wrap() = this("wrap")
+    fun wrapReverse() = this("wrap-reverse")
+}
+
+object textDecorationStyle : PropertyBuilder("textDecorationStyle") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun solid() = this("solid")
+    fun double() = this("double")
+    fun dotted() = this("dotted")
+    fun dashed() = this("dashed")
+    fun wavy() = this("wavy")
+}
+
+object textDecorationLine : PropertyBuilder("textDecorationLine") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun underline() = this("underline")
+    fun overline() = this("overline")
+    fun lineThrough() = this("line-through")
+}
+
+object cursor : PropertyBuilder("cursor") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun alias() = this("alias")
+    fun allScroll() = this("all-scroll")
+    fun auto() = this("auto")
+    fun cell() = this("cell")
+    fun contextMenu() = this("context-menu")
+    fun colResize() = this("col-resize")
+    fun copy() = this("copy")
+    fun crosshair() = this("crosshair")
+    fun default() = this("default")
+    fun eResize() = this("e-resize")
+    fun ewResize() = this("ew-resize")
+    fun grab() = this("grab")
+    fun grabbing() = this("grabbing")
+    fun help() = this("help")
+    fun move() = this("move")
+    fun nResize() = this("n-resize")
+    fun neResize() = this("ne-resize")
+    fun neswResize() = this("nesw-resize")
+    fun nsResize() = this("ns-resize")
+    fun nwResize() = this("nw-resize")
+    fun nwseResize() = this("nwse-resize")
+    fun noDrop() = this("no-drop")
+    fun notAllowed() = this("not-allowed")
+    fun pointer() = this("pointer")
+    fun progress() = this("progress")
+    fun rowResize() = this("row-resize")
+    fun sResize() = this("s-resize")
+    fun seResize() = this("se-resize")
+    fun swResize() = this("sw-resize")
+    fun text() = this("text")
+    fun verticalText() = this("vertical-text")
+    fun wResize() = this("w-resize")
+    fun wait() = this("wait")
+    fun zoomIn() = this("zoom-in")
+    fun zoomOut() = this("zoom-out")
+}
+
+object overflow : PropertyBuilder("overflow") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun visible() = this("visible")
+    fun hidden() = this("hidden")
+    fun scroll() = this("scroll")
+    fun auto() = this("auto")
+}
+
+object float : PropertyBuilder("float") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun left() = this("left")
+    fun right() = this("right")
+}
+
+object verticalAlign : PropertyBuilder("verticalAlign") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun baseline() = this("baseline")
+    fun sub() = this("sub")
+    fun `super`() = this("super")
+    fun top() = this("top")
+    fun textTop() = this("text-top")
+    fun middle() = this("middle")
+    fun bottom() = this("bottom")
+    fun textBottom() = this("text-bottom")
+
+    operator fun invoke(value: Linear) = this(value.toString())
+}
+
+object textOverflow : PropertyBuilder("textOverflow") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun clip() = this("clip")
+    fun ellipsis() = this("ellipsis")
+}
+
+object whiteSpace : PropertyBuilder("whiteSpace") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    fun normal() = this("normal")
+    fun nowrap() = this("nowrap")
+    fun pre() = this("pre")
+    fun preLine() = this("pre-line")
+    fun preWrap() = this("pre-wrap")
+}
+
+object objectFit : PropertyBuilder("objectFit") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun fill() = this("fill")
+    fun contain() = this("contain")
+    fun cover() = this("cover")
+    fun scaleDown() = this("scale-down")
+}
+
+object positionAlign : PropertyBuilder("positionAlign") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+
+    operator fun invoke(horizontal: Horizontal, vertical: Vertical) = this("$horizontal $vertical")
+    operator fun invoke(horizontal: Linear, vertical: Linear) = this("$horizontal $vertical")
+}

@@ -3,6 +3,7 @@ package io.akryl.dom
 import io.akryl.dom.css.SelectorStyles
 import io.akryl.dom.css.StyleProperty
 import io.akryl.dom.css.cssRegistry
+import io.akryl.dom.css.properties.*
 import io.akryl.dom.html.Div
 import io.akryl.dom.html.Span
 import org.w3c.dom.HTMLStyleElement
@@ -15,6 +16,7 @@ import kotlin.js.json
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import kotlin.test.assertNull
 
 class CssTest {
     @Test
@@ -48,12 +50,12 @@ class CssTest {
     @Test
     fun testInlineCssCached() {
         val css1 = listOf(
-            StyleProperty("width", "100px"),
-            StyleProperty("height", "100px")
+            width(100.px),
+            height(100.px)
         )
         val css2 = listOf(
-            StyleProperty("color", "red"),
-            StyleProperty("fontSize", "32px")
+            color.red(),
+            fontSize(32.px)
         )
         val css3 = ArrayList(css2)
 
@@ -85,10 +87,10 @@ class CssTest {
     @Test
     fun testInlineCssInjectedIntoDocument() {
         val css = listOf(
-            StyleProperty("width", "100px"),
-            StyleProperty("height", "200px"),
-            SelectorStyles("&:hover", listOf(StyleProperty("background", "gray"))),
-            SelectorStyles("& > p.foo", listOf(StyleProperty("fontSize", "12px")))
+            width(100.px),
+            height(200.px),
+            SelectorStyles("&:hover", listOf(background("gray"))),
+            SelectorStyles("& > p.foo", listOf(fontSize(12.px)))
         )
 
         val root = ReactTestRenderer.aktCreate {
@@ -104,7 +106,77 @@ class CssTest {
             ?.find { it.innerHTML.contains(className) }
 
         assertEquals(
-            ".$className {width:100px;height:200px;} .$className:hover {background:gray;} .$className > p.foo {fontSize:12px;}",
+            ".$className {width:100px;height:200px;} .$className:hover {background:gray;} .$className > p.foo {font-size:12px;}",
+            styleEl?.innerHTML
+        )
+    }
+
+    @Test
+    fun testTransformDsl() {
+        assertEquals("transform", transform.key)
+        assertNull(transform.value)
+
+        val simple = transform.translate(100.px, 200.px)
+        assertEquals("transform", simple.key)
+        assertEquals("translate(100px, 200px)", simple.value)
+
+        val complex = transform
+            .translate(200.px, 300.px)
+            .rotate(10.deg)
+            .scale(4)
+        assertEquals("transform", complex.key)
+        assertEquals("translate(200px, 300px) rotate(10deg) scale(4)", complex.value)
+    }
+
+    @Test
+    fun testTransitionDsl() {
+        val simple = transition(transform, 500.ms)
+        assertEquals("transition", simple.key)
+        assertEquals("transform 500ms ease 0s", simple.value)
+
+        val complex = transition
+            .add(transform, 500.ms, Timing.linear, 100.ms)
+            .add(color, 1.s, Timing.easeIn, 200.ms)
+        assertEquals("transition", complex.key)
+        assertEquals("transform 500ms linear 100ms, color 1s ease-in 200ms", complex.value)
+    }
+
+    @Test
+    fun testCssTyping() {
+        val root = ReactTestRenderer.aktCreate {
+            Div(
+                css = listOf(
+                    transform.translateY(10.px).skew(45.deg, 30.deg),
+                    boxShadow.add(10.px, 20.px, 30.px, 40.px, Color.black),
+                    transition.add(transform, 10.s)
+                ),
+                style = listOf(
+                    transform.translateY(10.px).skew(45.deg, 30.deg),
+                    boxShadow.add(10.px, 20.px, 30.px, 40.px, Color.black),
+                    transition.add(transform, 10.s)
+                )
+            )
+        }
+
+        val json = root.toJSON().asDynamic()
+
+        val style = json.props.style
+        assertJsonEquals(
+            json(
+                "transform" to "translateY(10px) skew(45deg, 30deg)",
+                "boxShadow" to "10px 20px 30px 40px black",
+                "transition" to "transform 10s ease 0s"
+            ),
+            style
+        )
+
+        val className = json.props.className as String
+        val styleEl = document.head
+            ?.childNodes?.asList()
+            ?.filterIsInstance<HTMLStyleElement>()
+            ?.find { it.innerHTML.contains(className) }
+        assertEquals(
+            ".$className {transform:translateY(10px) skew(45deg, 30deg);box-shadow:10px 20px 30px 40px black;transition:transform 10s ease 0s;}",
             styleEl?.innerHTML
         )
     }

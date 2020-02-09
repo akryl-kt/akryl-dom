@@ -1,7 +1,7 @@
 package io.akryl.dom.html
 
+import io.akryl.dom.css.AbstractStyleProperty
 import io.akryl.dom.css.CssElement
-import io.akryl.dom.css.StyleProperty
 import io.akryl.dom.css.cssRegistry
 import io.akryl.dom.css.toStyleJson
 import org.w3c.dom.events.Event
@@ -13,7 +13,7 @@ import kotlin.js.json
 fun html(
     tag: String,
     attributes: Map<String, Any?> = emptyMap(),
-    style: List<StyleProperty?>? = null,
+    style: List<AbstractStyleProperty?>? = null,
     css: List<CssElement?>? = null,
     listeners: Map<String, (event: Event) -> Unit> = emptyMap(),
     children: Iterable<ReactElement<*>?>? = null,
