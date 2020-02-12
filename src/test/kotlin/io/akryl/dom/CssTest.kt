@@ -197,6 +197,14 @@ class CssTest {
     }
 
     @Test
+    fun testClassList() {
+        assertEquals(
+            "foo bar ${testClass.name}",
+            classList("foo", "bar", testClass)
+        )
+    }
+
+    @Test
     fun testCssClass() {
         assertEquals(testClass.toString(), testClass.name)
         assertTrue(testClass.name.startsWith("testClass"))
