@@ -2,6 +2,7 @@ package io.akryl.dom
 
 import io.akryl.dom.css.SelectorStyles
 import io.akryl.dom.css.StyleProperty
+import io.akryl.dom.css.classMap
 import io.akryl.dom.css.cssRegistry
 import io.akryl.dom.css.properties.*
 import io.akryl.dom.html.Div
@@ -179,5 +180,28 @@ class CssTest {
             ".$className {transform:translateY(10px) skew(45deg, 30deg);box-shadow:10px 20px 30px 40px black;transition:transform 10s ease 0s;}",
             styleEl?.innerHTML
         )
+    }
+
+    @Test
+    fun testClassMap() {
+        val firstClass = classMap(
+            "foo" to true,
+            "bar" to true
+        )
+        assertEquals("foo bar", firstClass)
+
+        val secondClass = classMap(
+            "foo" to true,
+            "bar" to false,
+            "baz" to true
+        )
+        assertEquals("foo baz", secondClass)
+
+        val thirdClass = classMap(
+            "foo" to false,
+            "bar" to false,
+            "baz" to false
+        )
+        assertEquals("", thirdClass)
     }
 }
