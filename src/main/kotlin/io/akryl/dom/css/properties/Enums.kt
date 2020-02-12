@@ -240,6 +240,16 @@ object flexWrap : PropertyBuilder("flexWrap") {
     fun wrapReverse() = this("wrap-reverse")
 }
 
+object textDecoration : PropertyBuilder("textDecoration") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun none() = this("none")
+
+    fun underline() = this("underline")
+    fun overline() = this("overline")
+    fun lineThrough() = this("line-through")
+}
+
 object textDecorationStyle : PropertyBuilder("textDecorationStyle") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
@@ -367,12 +377,4 @@ object objectFit : PropertyBuilder("objectFit") {
     fun contain() = this("contain")
     fun cover() = this("cover")
     fun scaleDown() = this("scale-down")
-}
-
-object positionAlign : PropertyBuilder("positionAlign") {
-    fun initial() = this("initial")
-    fun inherit() = this("inherit")
-
-    operator fun invoke(horizontal: Horizontal, vertical: Vertical) = this("$horizontal $vertical")
-    operator fun invoke(horizontal: Linear, vertical: Linear) = this("$horizontal $vertical")
 }

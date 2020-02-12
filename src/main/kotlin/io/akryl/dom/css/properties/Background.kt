@@ -37,3 +37,11 @@ object backgroundRepeat : PropertyBuilder("backgroundRepeat") {
   fun initial() = this("initial")
   fun inherit() = this("inherit")
 }
+
+object backgroundImage : PropertyBuilder("backgroundImage") {
+  fun none() = this("none")
+  fun initial() = this("initial")
+  fun inherit() = this("inherit")
+
+  fun url(value: String) = this("url('$value')")
+}

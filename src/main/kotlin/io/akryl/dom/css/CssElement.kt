@@ -18,7 +18,7 @@ interface PropertyKey {
 }
 
 abstract class PropertyBuilder(override val key: String) : PropertyKey {
-    operator fun invoke(value: String?) = StyleProperty(key, value)
+    open operator fun invoke(value: String?) = StyleProperty(key, value)
 }
 
 fun <T : CssElement> List<T?>.toStyleJson(): Json? {
