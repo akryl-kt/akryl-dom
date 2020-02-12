@@ -8,7 +8,7 @@ class DomCssRegistry {
 
     private val items = HashMap<List<CssElement?>, String>()
 
-    private fun generateClassName(): String {
+    fun generateClassName(prefix: String): String {
         val random = (Random.nextLong() and 0xFFFFFFFFL)
             .toString(16)
             .padStart(8, '0')
@@ -20,7 +20,7 @@ class DomCssRegistry {
 
         var className = items[css]
         if (className == null) {
-            className = generateClassName()
+            className = generateClassName(prefix)
             injectCss(".$className", css)
             items[css] = className
         }
@@ -28,7 +28,7 @@ class DomCssRegistry {
         return className
     }
 
-    private fun injectCss(selector: String, css: List<CssElement?>) {
+    fun injectCss(selector: String, css: List<CssElement?>) {
         val str = buildString {
             appendCss(selector, css)
         }

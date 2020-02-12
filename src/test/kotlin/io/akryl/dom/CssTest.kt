@@ -1,9 +1,6 @@
 package io.akryl.dom
 
-import io.akryl.dom.css.SelectorStyles
-import io.akryl.dom.css.StyleProperty
-import io.akryl.dom.css.classMap
-import io.akryl.dom.css.cssRegistry
+import io.akryl.dom.css.*
 import io.akryl.dom.css.properties.*
 import io.akryl.dom.html.Div
 import io.akryl.dom.html.Span
@@ -14,10 +11,12 @@ import react_test_renderer.aktCreate
 import utils.assertJsonEquals
 import kotlin.browser.document
 import kotlin.js.json
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
-import kotlin.test.assertNull
+import kotlin.test.*
+
+val testClass by css(
+    width(100.px),
+    transform.translate(10.px, 20.px)
+)
 
 class CssTest {
     @Test
@@ -101,14 +100,9 @@ class CssTest {
         val json = root.toJSON().asDynamic()
         val className = json.props.className as String
 
-        val styleEl = document.head
-            ?.childNodes?.asList()
-            ?.filterIsInstance<HTMLStyleElement>()
-            ?.find { it.innerHTML.contains(className) }
-
         assertEquals(
             ".$className {width:100px;height:200px;} .$className:hover {background:gray;} .$className > p.foo {font-size:12px;}",
-            styleEl?.innerHTML
+            extractStyle(className)
         )
     }
 
@@ -172,13 +166,10 @@ class CssTest {
         )
 
         val className = json.props.className as String
-        val styleEl = document.head
-            ?.childNodes?.asList()
-            ?.filterIsInstance<HTMLStyleElement>()
-            ?.find { it.innerHTML.contains(className) }
+
         assertEquals(
             ".$className {transform:translateY(10px) skew(45deg, 30deg);box-shadow:10px 20px 30px 40px black;transition:transform 10s ease 0s;}",
-            styleEl?.innerHTML
+            extractStyle(className)
         )
     }
 
@@ -203,5 +194,25 @@ class CssTest {
             "baz" to false
         )
         assertEquals("", thirdClass)
+    }
+
+    @Test
+    fun testCssClass() {
+        assertEquals(testClass.toString(), testClass.name)
+        assertTrue(testClass.name.startsWith("testClass"))
+        assertEquals(".${testClass.name}", testClass.selector)
+
+        assertEquals(
+            "${testClass.selector} {width:100px;transform:translate(10px, 20px);}",
+            extractStyle(testClass.name)
+        )
+    }
+
+    private fun extractStyle(className: String): String? {
+        return document.head
+            ?.childNodes?.asList()
+            ?.filterIsInstance<HTMLStyleElement>()
+            ?.find { it.innerHTML.contains(className) }
+            ?.innerHTML
     }
 }
