@@ -55,3 +55,14 @@ fun html(
 
 @Suppress("FunctionName")
 fun Text(value: String) = value.unsafeCast<ReactElement<*>>()
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun concatChildren(children: Iterable<ReactElement<*>?>?, child: ReactElement<*>?, text: String?): List<ReactElement<*>>? {
+    if (text == null && child == null && children == null) return null
+
+    val result = ArrayList<ReactElement<*>>()
+    if (text != null) result.add(Text(text))
+    if (child != null) result.add(child)
+    children?.filterNotNullTo(result)
+    return result
+}

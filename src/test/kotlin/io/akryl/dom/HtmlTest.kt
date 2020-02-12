@@ -26,7 +26,7 @@ private fun componentWithHtml() = component {
 
 class HtmlTest {
     @Test
-    fun testDivWithChildren() {
+    fun testDivWithChildrenVararg() {
         val root = ReactTestRenderer.aktCreate {
             Div(
                 Text("Hello, World!"),
@@ -41,6 +41,76 @@ class HtmlTest {
                 "children" to arrayOf(
                     "Hello, World!",
                     "Second child"
+                )
+            ),
+            root.toJSON()
+        )
+    }
+
+    @Test
+    fun testDivWithChildrenProp() {
+        val root = ReactTestRenderer.aktCreate {
+            Div(
+                children = listOf(
+                    Text("Hello, World!"),
+                    Text("Second child")
+                )
+            )
+        }
+
+        assertJsonEquals(
+            json(
+                "type" to "div",
+                "props" to json(),
+                "children" to arrayOf(
+                    "Hello, World!",
+                    "Second child"
+                )
+            ),
+            root.toJSON()
+        )
+    }
+
+    @Test
+    fun testDivWithChildProp() {
+        val root = ReactTestRenderer.aktCreate {
+            Div(
+                child = Span(Text("Hello, World!"))
+            )
+        }
+
+        assertJsonEquals(
+            json(
+                "type" to "div",
+                "props" to json(),
+                "children" to arrayOf(
+                    json(
+                        "type" to "span",
+                        "props" to json(),
+                        "children" to arrayOf(
+                            "Hello, World!"
+                        )
+                    )
+                )
+            ),
+            root.toJSON()
+        )
+    }
+
+    @Test
+    fun testDivWithTextProp() {
+        val root = ReactTestRenderer.aktCreate {
+            Div(
+                text = "Hello, World!"
+            )
+        }
+
+        assertJsonEquals(
+            json(
+                "type" to "div",
+                "props" to json(),
+                "children" to arrayOf(
+                    "Hello, World!"
                 )
             ),
             root.toJSON()

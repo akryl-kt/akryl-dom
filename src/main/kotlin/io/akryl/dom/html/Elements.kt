@@ -146,6 +146,8 @@ fun A(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null
@@ -211,7 +213,7 @@ fun A(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -272,6 +274,8 @@ fun Abbr(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -328,7 +332,7 @@ fun Abbr(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -389,6 +393,8 @@ fun Address(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -445,7 +451,7 @@ fun Address(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -516,6 +522,8 @@ fun Area(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLAreaElement?>? = null) = html(
@@ -582,7 +590,7 @@ fun Area(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -643,6 +651,8 @@ fun Article(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -699,7 +709,7 @@ fun Article(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -760,6 +770,8 @@ fun Aside(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -816,7 +828,7 @@ fun Aside(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -883,6 +895,8 @@ fun Audio(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLAudioElement?>? = null) = html(
@@ -945,7 +959,7 @@ fun Audio(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1006,6 +1020,8 @@ fun B(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -1062,7 +1078,7 @@ fun B(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1125,6 +1141,8 @@ fun Base(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLBaseElement?>? = null) = html(
@@ -1183,7 +1201,7 @@ fun Base(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1244,6 +1262,8 @@ fun Bdi(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -1300,7 +1320,7 @@ fun Bdi(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1361,6 +1381,8 @@ fun Bdo(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -1417,7 +1439,7 @@ fun Bdo(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1479,6 +1501,8 @@ fun Blockquote(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -1536,7 +1560,7 @@ fun Blockquote(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1597,6 +1621,8 @@ fun Body(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLBodyElement?>? = null) = html(
@@ -1653,7 +1679,7 @@ fun Body(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1714,6 +1740,8 @@ fun Br(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLBRElement?>? = null) = html(
@@ -1770,7 +1798,7 @@ fun Br(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1842,6 +1870,8 @@ fun Button(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLButtonElement?>? = null) = html(
@@ -1909,7 +1939,7 @@ fun Button(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -1972,6 +2002,8 @@ fun Canvas(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLCanvasElement?>? = null) = html(
@@ -2030,7 +2062,7 @@ fun Canvas(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2091,6 +2123,8 @@ fun Caption(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableCaptionElement?>? = null) = html(
@@ -2147,7 +2181,7 @@ fun Caption(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2208,6 +2242,8 @@ fun Cite(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -2264,7 +2300,7 @@ fun Cite(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2325,6 +2361,8 @@ fun Code(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -2381,7 +2419,7 @@ fun Code(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2443,6 +2481,8 @@ fun Col(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableColElement?>? = null) = html(
@@ -2500,7 +2540,7 @@ fun Col(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2562,6 +2602,8 @@ fun Colgroup(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableColElement?>? = null) = html(
@@ -2619,7 +2661,7 @@ fun Colgroup(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2680,6 +2722,8 @@ fun Data(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDataElement?>? = null) = html(
@@ -2736,7 +2780,7 @@ fun Data(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2797,6 +2841,8 @@ fun Datalist(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDataListElement?>? = null) = html(
@@ -2853,7 +2899,7 @@ fun Datalist(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -2914,6 +2960,8 @@ fun Dd(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -2970,7 +3018,7 @@ fun Dd(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3033,6 +3081,8 @@ fun Del(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -3091,7 +3141,7 @@ fun Del(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3153,6 +3203,8 @@ fun Details(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDetailsElement?>? = null) = html(
@@ -3210,7 +3262,7 @@ fun Details(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3271,6 +3323,8 @@ fun Dfn(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -3327,7 +3381,7 @@ fun Dfn(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3389,6 +3443,8 @@ fun Dialog(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDialogElement?>? = null) = html(
@@ -3446,7 +3502,7 @@ fun Dialog(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3507,6 +3563,8 @@ fun Div(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDivElement?>? = null) = html(
@@ -3563,7 +3621,7 @@ fun Div(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3624,6 +3682,8 @@ fun Dl(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLDListElement?>? = null) = html(
@@ -3680,7 +3740,7 @@ fun Dl(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3741,6 +3801,8 @@ fun Dt(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -3797,7 +3859,7 @@ fun Dt(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3858,6 +3920,8 @@ fun Em(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -3914,7 +3978,7 @@ fun Em(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -3979,6 +4043,8 @@ fun Embed(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLEmbedElement?>? = null) = html(
@@ -4039,7 +4105,7 @@ fun Embed(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4103,6 +4169,8 @@ fun Fieldset(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLFieldSetElement?>? = null) = html(
@@ -4162,7 +4230,7 @@ fun Fieldset(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4223,6 +4291,8 @@ fun Figcaption(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -4279,7 +4349,7 @@ fun Figcaption(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4340,6 +4410,8 @@ fun Figure(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -4396,7 +4468,7 @@ fun Figure(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4457,6 +4529,8 @@ fun Footer(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -4513,7 +4587,7 @@ fun Footer(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4582,6 +4656,8 @@ fun Form(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLFormElement?>? = null) = html(
@@ -4646,7 +4722,7 @@ fun Form(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4707,6 +4783,8 @@ fun H1(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -4763,7 +4841,7 @@ fun H1(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4824,6 +4902,8 @@ fun H2(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -4880,7 +4960,7 @@ fun H2(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -4941,6 +5021,8 @@ fun H3(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -4997,7 +5079,7 @@ fun H3(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5058,6 +5140,8 @@ fun H4(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -5114,7 +5198,7 @@ fun H4(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5175,6 +5259,8 @@ fun H5(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -5231,7 +5317,7 @@ fun H5(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5292,6 +5378,8 @@ fun H6(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadingElement?>? = null) = html(
@@ -5348,7 +5436,7 @@ fun H6(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5409,6 +5497,8 @@ fun Head(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLHeadElement?>? = null) = html(
@@ -5465,7 +5555,7 @@ fun Head(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5526,6 +5616,8 @@ fun Header(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -5582,7 +5674,7 @@ fun Header(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5643,6 +5735,8 @@ fun Hr(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -5699,7 +5793,7 @@ fun Hr(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5761,6 +5855,8 @@ fun Html(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -5818,7 +5914,7 @@ fun Html(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -5879,6 +5975,8 @@ fun I(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -5935,7 +6033,7 @@ fun I(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6002,6 +6100,8 @@ fun Iframe(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLIFrameElement?>? = null) = html(
@@ -6064,7 +6164,7 @@ fun Iframe(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6132,6 +6232,8 @@ fun Img(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLImageElement?>? = null) = html(
@@ -6195,7 +6297,7 @@ fun Img(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6286,6 +6388,8 @@ fun Input(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLInputElement?>? = null) = html(
@@ -6372,7 +6476,7 @@ fun Input(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6435,6 +6539,8 @@ fun Ins(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -6493,7 +6599,7 @@ fun Ins(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6554,6 +6660,8 @@ fun Kbd(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -6610,7 +6718,7 @@ fun Kbd(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6673,6 +6781,8 @@ fun Label(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLLabelElement?>? = null) = html(
@@ -6731,7 +6841,7 @@ fun Label(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6792,6 +6902,8 @@ fun Legend(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLLegendElement?>? = null) = html(
@@ -6848,7 +6960,7 @@ fun Legend(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -6910,6 +7022,8 @@ fun Li(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -6967,7 +7081,7 @@ fun Li(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7034,6 +7148,8 @@ fun Link(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLLinkElement?>? = null) = html(
@@ -7096,7 +7212,7 @@ fun Link(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7157,6 +7273,8 @@ fun Main(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -7213,7 +7331,7 @@ fun Main(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7275,6 +7393,8 @@ fun Map(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLMapElement?>? = null) = html(
@@ -7332,7 +7452,7 @@ fun Map(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7393,6 +7513,8 @@ fun Mark(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -7449,7 +7571,7 @@ fun Mark(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7514,6 +7636,8 @@ fun Meta(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLMetaElement?>? = null) = html(
@@ -7574,7 +7698,7 @@ fun Meta(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7642,6 +7766,8 @@ fun Meter(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLMeterElement?>? = null) = html(
@@ -7705,7 +7831,7 @@ fun Meter(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7766,6 +7892,8 @@ fun Nav(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -7822,7 +7950,7 @@ fun Nav(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -7883,6 +8011,8 @@ fun Noscript(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -7939,7 +8069,7 @@ fun Noscript(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8007,6 +8137,8 @@ fun Object(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLObjectElement?>? = null) = html(
@@ -8070,7 +8202,7 @@ fun Object(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8134,6 +8266,8 @@ fun Ol(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLOListElement?>? = null) = html(
@@ -8193,7 +8327,7 @@ fun Ol(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8256,6 +8390,8 @@ fun Optgroup(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLOptGroupElement?>? = null) = html(
@@ -8314,7 +8450,7 @@ fun Optgroup(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8379,6 +8515,8 @@ fun Option(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLOptionElement?>? = null) = html(
@@ -8439,7 +8577,7 @@ fun Option(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8503,6 +8641,8 @@ fun Output(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLOutputElement?>? = null) = html(
@@ -8562,7 +8702,7 @@ fun Output(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8623,6 +8763,8 @@ fun P(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLParagraphElement?>? = null) = html(
@@ -8679,7 +8821,7 @@ fun P(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8742,6 +8884,8 @@ fun Param(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLParamElement?>? = null) = html(
@@ -8800,7 +8944,7 @@ fun Param(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8862,6 +9006,8 @@ fun Path(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out SVGPathElement?>? = null) = html(
@@ -8919,7 +9065,7 @@ fun Path(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -8975,6 +9121,8 @@ fun Picture(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLPictureElement?>? = null) = html(
@@ -9031,7 +9179,7 @@ fun Picture(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9092,6 +9240,8 @@ fun Pre(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLPreElement?>? = null) = html(
@@ -9148,7 +9298,7 @@ fun Pre(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9211,6 +9361,8 @@ fun Progress(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLProgressElement?>? = null) = html(
@@ -9269,7 +9421,7 @@ fun Progress(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9331,6 +9483,8 @@ fun Q(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLQuoteElement?>? = null) = html(
@@ -9388,7 +9542,7 @@ fun Q(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9449,6 +9603,8 @@ fun Rp(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -9505,7 +9661,7 @@ fun Rp(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9566,6 +9722,8 @@ fun Rt(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -9622,7 +9780,7 @@ fun Rt(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9683,6 +9841,8 @@ fun Ruby(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -9739,7 +9899,7 @@ fun Ruby(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9800,6 +9960,8 @@ fun S(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -9856,7 +10018,7 @@ fun S(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -9917,6 +10079,8 @@ fun Samp(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -9973,7 +10137,7 @@ fun Samp(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10039,6 +10203,8 @@ fun Script(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLScriptElement?>? = null) = html(
@@ -10100,7 +10266,7 @@ fun Script(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10161,6 +10327,8 @@ fun Section(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -10217,7 +10385,7 @@ fun Section(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10286,6 +10454,8 @@ fun Select(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLSelectElement?>? = null) = html(
@@ -10350,7 +10520,7 @@ fun Select(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10411,6 +10581,8 @@ fun Small(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -10467,7 +10639,7 @@ fun Small(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10532,6 +10704,8 @@ fun Source(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLSourceElement?>? = null) = html(
@@ -10592,7 +10766,7 @@ fun Source(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10653,6 +10827,8 @@ fun Span(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLSpanElement?>? = null) = html(
@@ -10709,7 +10885,7 @@ fun Span(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10770,6 +10946,8 @@ fun Strong(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -10826,7 +11004,7 @@ fun Strong(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -10889,6 +11067,8 @@ fun Style(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLStyleElement?>? = null) = html(
@@ -10947,7 +11127,7 @@ fun Style(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11008,6 +11188,8 @@ fun Sub(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -11064,7 +11246,7 @@ fun Sub(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11125,6 +11307,8 @@ fun Summary(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -11181,7 +11365,7 @@ fun Summary(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11242,6 +11426,8 @@ fun Sup(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -11298,7 +11484,7 @@ fun Sup(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11361,6 +11547,8 @@ fun Svg(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out SVGElement?>? = null) = html(
@@ -11419,7 +11607,7 @@ fun Svg(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11480,6 +11668,8 @@ fun Table(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableElement?>? = null) = html(
@@ -11536,7 +11726,7 @@ fun Table(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11597,6 +11787,8 @@ fun Tbody(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -11653,7 +11845,7 @@ fun Tbody(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11717,6 +11909,8 @@ fun Td(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableCellElement?>? = null) = html(
@@ -11776,7 +11970,7 @@ fun Td(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11837,6 +12031,8 @@ fun Template(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTemplateElement?>? = null) = html(
@@ -11893,7 +12089,7 @@ fun Template(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -11966,6 +12162,8 @@ fun Textarea(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTextAreaElement?>? = null) = html(
@@ -12034,7 +12232,7 @@ fun Textarea(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12095,6 +12293,8 @@ fun Tfoot(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -12151,7 +12351,7 @@ fun Tfoot(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12217,6 +12417,8 @@ fun Th(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableCellElement?>? = null) = html(
@@ -12278,7 +12480,7 @@ fun Th(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12339,6 +12541,8 @@ fun Thead(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -12395,7 +12599,7 @@ fun Thead(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12457,6 +12661,8 @@ fun Time(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTimeElement?>? = null) = html(
@@ -12514,7 +12720,7 @@ fun Time(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12575,6 +12781,8 @@ fun Title(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTitleElement?>? = null) = html(
@@ -12631,7 +12839,7 @@ fun Title(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12692,6 +12900,8 @@ fun Tr(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTableRowElement?>? = null) = html(
@@ -12748,7 +12958,7 @@ fun Tr(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12814,6 +13024,8 @@ fun Track(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLTrackElement?>? = null) = html(
@@ -12875,7 +13087,7 @@ fun Track(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -12936,6 +13148,8 @@ fun U(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -12992,7 +13206,7 @@ fun U(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -13053,6 +13267,8 @@ fun Ul(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLUListElement?>? = null) = html(
@@ -13109,7 +13325,7 @@ fun Ul(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -13170,6 +13386,8 @@ fun Var(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -13226,7 +13444,7 @@ fun Var(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -13296,6 +13514,8 @@ fun Video(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLVideoElement?>? = null) = html(
@@ -13361,7 +13581,7 @@ fun Video(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
@@ -13422,6 +13642,8 @@ fun Wbr(
   style: List<AbstractStyleProperty?>? = null,
   css: List<CssElement?>? = null,
   children: Iterable<ReactElement<*>?>? = null,
+  child: ReactElement<*>? = null,
+  text: String? = null,
   innerHtml: String? = null,
   key: Any? = null,
   ref: MutableRefObject<out HTMLElement?>? = null) = html(
@@ -13478,7 +13700,7 @@ fun Wbr(
   ),
   style = style,
   css = css,
-  children = children,
+  children = concatChildren(children, child, text),
   innerHtml = innerHtml,
   key = key,
   ref = ref
