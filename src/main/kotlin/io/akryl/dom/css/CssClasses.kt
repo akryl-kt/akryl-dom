@@ -2,12 +2,6 @@ package io.akryl.dom.css
 
 import kotlin.reflect.KProperty
 
-data class CssClass(val name: String) : CharSequence by name {
-    val selector = ".$name"
-
-    override fun toString() = name
-}
-
 class CssClassProperty(private val clazz: CssClass) {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>) = clazz
 }

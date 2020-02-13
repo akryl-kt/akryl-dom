@@ -216,6 +216,26 @@ class CssTest {
         )
     }
 
+    @Test
+    fun testSelectors() {
+        var selector = hover()
+        assertEquals("&:hover", selector.selector)
+
+        selector = not(hover)()
+        assertEquals("&:not(:hover)", selector.selector)
+
+        val foo = CssClass("foo")
+        val bar = CssClass("bar")
+        selector = (foo + bar)()
+        assertEquals("& .foo.bar", selector.selector)
+
+        selector = not(foo + bar)()
+        assertEquals("& :not(.foo.bar)", selector.selector)
+
+        selector = tag("div")[foo]()
+        assertEquals("& div.foo", selector.selector)
+    }
+
     private fun extractStyle(className: String): String? {
         return document.head
             ?.childNodes?.asList()
