@@ -1,15 +1,13 @@
 package io.akryl.dom
 
 import io.akryl.component
-import io.akryl.dom.html.Div
-import io.akryl.dom.html.Img
-import io.akryl.dom.html.Span
-import io.akryl.dom.html.Text
+import io.akryl.dom.html.*
 import react_test_renderer.ReactTestRenderer
 import react_test_renderer.aktCreate
 import utils.assertJsonEquals
 import kotlin.js.json
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 private fun componentWithHtml() = component {
     Div(className = "root", children = listOf(
@@ -212,5 +210,61 @@ class HtmlTest {
             ),
             root.toJSON()
         )
+    }
+
+    @Test
+    fun testIfElse() {
+        var result = listOf(
+            *If(true) { "true" } Else { "false" }
+        )
+        assertEquals(listOf("true"), result)
+
+        result = listOf(
+            *If(false) { "true" } Else { "false" }
+        )
+        assertEquals(listOf("false"), result)
+
+        result = listOf(
+            *If(true) { "true" }
+        )
+        assertEquals(listOf("true"), result)
+
+        result = listOf(
+            *If(false) { "true" }
+        )
+        assertEquals(listOf(), result)
+
+        result = listOf(
+            *IfNotNull("123") { it }
+        )
+        assertEquals(listOf("123"), result)
+
+        result = listOf(
+            *IfNotNull<String, String>(null) { it }
+        )
+        assertEquals(listOf(), result)
+    }
+
+    @Test
+    fun testFor() {
+        var result = listOf(
+            *For(listOf(1, 2, 3)) { it * 2 }
+        )
+        assertEquals(listOf(2, 4, 6), result)
+
+        result = listOf(
+            *For(arrayOf(1, 2, 3)) { it * 2 }
+        )
+        assertEquals(listOf(2, 4, 6), result)
+
+        result = listOf(
+            *ForOf(1, 2, 3) { it * 2 }
+        )
+        assertEquals(listOf(2, 4, 6), result)
+
+        result = listOf(
+            *For(listOf<Int>()) { it * 2 } Else { 0 }
+        )
+        assertEquals(listOf(0), result)
     }
 }
