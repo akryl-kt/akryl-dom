@@ -236,6 +236,79 @@ class CssTest {
         assertEquals("& div.foo", selector.selector)
     }
 
+    @Test
+    fun testCssMap() {
+        val first = listOf(
+            width(100.px),
+            transform.translateY(10.px)
+        )
+
+        val second = listOf(
+            width(50.px),
+            height(50.px)
+        )
+
+        val third = listOf(
+            color.red()
+        )
+
+        var css = cssMap(
+            first to true,
+            second to false,
+            third to true
+        )
+        assertEquals(
+            listOf(
+                width(100.px),
+                transform.translateY(10.px),
+                color.red()
+            ),
+            css
+        )
+
+        css = cssMap(
+            first to true,
+            second to true,
+            third to false
+        )
+        assertEquals(
+            listOf(
+                width(100.px),
+                transform.translateY(10.px),
+                width(50.px),
+                height(50.px)
+            ),
+            css
+        )
+
+        css = cssMap(
+            first to true
+        )
+        assertEquals(first, css)
+    }
+
+    @Test
+    fun testCssList() {
+        val first = listOf(
+            width(100.px),
+            transform.translateY(10.px)
+        )
+
+        val second = listOf(
+            color.red()
+        )
+
+        val css = cssList(first, second)
+        assertEquals(
+            listOf(
+                width(100.px),
+                transform.translateY(10.px),
+                color.red()
+            ),
+            css
+        )
+    }
+
     private fun extractStyle(className: String): String? {
         return document.head
             ?.childNodes?.asList()
