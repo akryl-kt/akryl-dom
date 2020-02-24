@@ -23,5 +23,6 @@ class NumberPropertyBuilder(name: String) : PropertyBuilder(name) {
 val flexGrow = NumberPropertyBuilder("flexGrow")
 val flexShrink = NumberPropertyBuilder("flexShrink")
 val opacity = NumberPropertyBuilder("opacity")
+val strokeWidth = NumberPropertyBuilder("strokeWidth")
 
 val zIndex = IntPropertyBuilder("zIndex")

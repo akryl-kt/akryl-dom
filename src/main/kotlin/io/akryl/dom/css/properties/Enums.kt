@@ -378,3 +378,58 @@ object objectFit : PropertyBuilder("objectFit") {
     fun cover() = this("cover")
     fun scaleDown() = this("scale-down")
 }
+
+object userSelect : PropertyBuilder("userSelect") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun none() = this("none")
+    fun auto() = this("auto")
+    fun text() = this("text")
+    fun contain() = this("contain")
+    fun all() = this("all")
+}
+
+object justifyContent : PropertyBuilder("justifyContent") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun center() = this("center")
+    fun start() = this("start")
+    fun end() = this("end")
+    fun flexStart() = this("flex-start")
+    fun flexEnd() = this("flex-end")
+    fun left() = this("left")
+    fun right() = this("right")
+
+    fun baseline() = this("baseline")
+    fun firstBaseline() = this("first baseline")
+    fun lastBaseline() = this("last baseline")
+
+    fun spaceBetween() = this("space-between")
+    fun spaceAround() = this("space-around")
+    fun spaceEvenly() = this("space-evenly")
+    fun stretch() = this("stretch")
+
+    fun safeCenter() = this("safe center")
+    fun unsafeCenter() = this("unsafe center")
+}
+
+object pointerEvents : PropertyBuilder("pointerEvents") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    fun auto() = this("auto")
+    fun none() = this("none")
+    fun visiblePainted() = this("visiblePainted")
+    fun visibleFill() = this("visibleFill")
+    fun visibleStroke() = this("visibleStroke")
+    fun visible() = this("visible")
+    fun painted() = this("painted")
+    fun fill() = this("fill")
+    fun stroke() = this("stroke")
+    fun all() = this("all")
+}

@@ -3,14 +3,15 @@
 package io.akryl.dom.css.properties
 
 import io.akryl.dom.css.AbstractStyleProperty
+import io.akryl.dom.css.PropertyBuilder
 import io.akryl.dom.css.PropertyKey
 
 data class TransformProperty(override val value: String?) : AbstractStyleProperty(), PropertyKey {
     override val key: String = "transform"
 
     fun none() = this("none")
-    fun initial() = this("none")
-    fun inherit() = this("none")
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
 
     fun matrix(
         a: Number, b: Number,
@@ -88,3 +89,21 @@ val Number.deg get() = Angle("${this}deg")
 val Number.grad get() = Angle("${this}grad")
 val Number.rad get() = Angle("${this}rad")
 val Number.turn get() = Angle("${this}turn")
+
+object TransformOrigin : PropertyBuilder("transformOrigin") {
+    fun initial() = this("initial")
+    fun inherit() = this("inherit")
+    fun unset() = this("unset")
+
+    operator fun invoke(value: Linear?) = this(value?.toString())
+    operator fun invoke(value: Horizontal?) = this(value?.toString())
+    operator fun invoke(value: Vertical?) = this(value?.toString())
+    operator fun invoke(horizontal: Horizontal, vertical: Vertical) = this("$horizontal $vertical")
+    operator fun invoke(horizontal: Linear, vertical: Vertical) = this("$horizontal $vertical")
+    operator fun invoke(horizontal: Horizontal, vertical: Linear) = this("$horizontal $vertical")
+    operator fun invoke(horizontal: Linear, vertical: Linear) = this("$horizontal $vertical")
+    operator fun invoke(horizontal: Horizontal, vertical: Vertical, depth: Linear) = this("$horizontal $vertical $depth")
+    operator fun invoke(horizontal: Linear, vertical: Vertical, depth: Linear) = this("$horizontal $vertical $depth")
+    operator fun invoke(horizontal: Horizontal, vertical: Linear, depth: Linear) = this("$horizontal $vertical $depth")
+    operator fun invoke(horizontal: Linear, vertical: Linear, depth: Linear) = this("$horizontal $vertical $depth")
+}
