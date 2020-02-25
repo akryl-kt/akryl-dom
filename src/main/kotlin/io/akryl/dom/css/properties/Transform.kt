@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "ClassName")
 
 package io.akryl.dom.css.properties
 
@@ -90,7 +90,7 @@ val Number.grad get() = Angle("${this}grad")
 val Number.rad get() = Angle("${this}rad")
 val Number.turn get() = Angle("${this}turn")
 
-object TransformOrigin : PropertyBuilder("transformOrigin") {
+object transformOrigin : PropertyBuilder("transformOrigin") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
