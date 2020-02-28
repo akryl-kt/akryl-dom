@@ -1,6 +1,6 @@
 # Akryl DOM
 
-This library contains functions for building HTML element and styling them with CSS.
+This library contains functions for building HTML elements and styling them with CSS.
 
 # Install
 
@@ -100,6 +100,7 @@ All CSS properties declarations follow this syntax:
 ```kotlin
 propertyName(singleValue)
 propertyName.enumValue()
+propertyName.groupValue(additional, arguments)
 ```
 
 For example:
@@ -172,7 +173,8 @@ val bar by css(
 
 ### Inline CSS
 
-All HTML elements have argument named `css` that allows to inject inline CSS code. It is something like [styled-components](https://github.com/styled-components/styled-components) and [elm-css](https://github.com/rtfeldman/elm-css).
+All HTML elements have argument named `css` that allows to inject inline CSS code. 
+It is something like [styled-components](https://github.com/styled-components/styled-components) and [elm-css](https://github.com/rtfeldman/elm-css).
 
 ```kotlin
 // Kotlin
@@ -185,9 +187,11 @@ Div(
 )
 ```
 
-CSS will be connected to an element via `className` attribute. The CSS itself will be injected into the document head.
+CSS will be connected to an element via the `className` attribute. 
+The stylesheet itself will be injected into the document head. 
+The library caches CSS blocks, so, all identical instances will point to a single class name.
 
-So, it will look something like this in browser:
+The code above will be converted into this:
 
 ```CSS
 /* CSS */
@@ -204,6 +208,32 @@ So, it will look something like this in browser:
 </div>
 ```
 
-With inline CSS, you can use inner selectors like tags, pseudo-selectors or other classes. It's like the `CSS classes` but without name.
+With inline CSS, you can use inner selectors like tags, pseudo-selectors or other classes.
 
 ### Inline styles
+
+It is a value for the `style` attribute of an element. 
+Here you cannot use inner selectors, but only define CSS properties of a particular element. 
+This is useful when styles are changing often or have too many possible values.
+
+Example:
+
+```kotlin
+// Kotlin
+Div(
+    style = listOf(
+        transform.transition(100.px, 200.px),
+        willChange("transform")
+    ),
+    text = "div with inline styles"
+)
+```
+
+Will be converted to:
+
+```html
+<!-- HTML -->
+<div style="transform: translate(100px, 200px); will-change: transform;">
+    div with inline styles
+</div>
+```
