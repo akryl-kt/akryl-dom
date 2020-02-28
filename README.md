@@ -172,4 +172,38 @@ val bar by css(
 
 ### Inline CSS
 
+All HTML elements have argument named `css` that allows to inject inline CSS code. It is something like [styled-components](https://github.com/styled-components/styled-components) and [elm-css](https://github.com/rtfeldman/elm-css).
+
+```kotlin
+// Kotlin
+Div(
+    css = listOf(
+        background.black(),
+        color.white()
+    ),
+    text = "Inline CSS example"
+)
+```
+
+CSS will be connected to an element via `className` attribute. The CSS itself will be injected into the document head.
+
+So, it will look something like this in browser:
+
+```CSS
+/* CSS */
+.css-12345678 {
+    background: black;
+    color: white;
+}
+```
+
+```HTML
+<!-- HTML -->
+<div class="css-12345678">
+    Inline CSS example
+</div>
+```
+
+With inline CSS, you can use inner selectors like tags, pseudo-selectors or other classes. It's like the `CSS classes` but without name.
+
 ### Inline styles
