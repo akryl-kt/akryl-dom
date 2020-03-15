@@ -1,9 +1,6 @@
 package io.akryl.dom.html
 
-import io.akryl.dom.css.AbstractStyleProperty
-import io.akryl.dom.css.CssElement
-import io.akryl.dom.css.cssRegistry
-import io.akryl.dom.css.toStyleJson
+import io.akryl.dom.css.*
 import org.w3c.dom.events.Event
 import react.MutableRefObject
 import react.React.createElement
@@ -44,11 +41,7 @@ fun html(
         props["ref"] = ref
     }
 
-    val cssClassName = cssRegistry.findOrCreateClassName(css)
-    props["className"] = listOfNotNull(attributes["className"], cssClassName)
-        .takeIf { it.isNotEmpty() }
-        ?.joinToString(" ")
-        ?: undefined
+    props["className"] = concatStyle(css, attributes["className"]?.unsafeCast<CharSequence>())
 
     return createElement(tag, props, *(children?.toList()?.toTypedArray() ?: emptyArray()))
 }
@@ -65,4 +58,13 @@ inline fun concatChildren(children: Iterable<ReactElement<*>?>?, child: ReactEle
     if (child != null) result.add(child)
     children?.filterNotNullTo(result)
     return result
+}
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun concatStyle(css: CssStyle?, className: CharSequence?): String? {
+    val cssClassName = cssRegistry.findOrCreateClassName(css)
+    return listOfNotNull(className?.toString(), cssClassName)
+        .takeIf { it.isNotEmpty() }
+        ?.joinToString(" ")
+        ?: undefined
 }

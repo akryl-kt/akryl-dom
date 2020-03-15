@@ -85,6 +85,28 @@ class CssTest {
     }
 
     @Test
+    fun testConcatCssAndClassName() {
+        val testClass by css(
+            height(100.px)
+        )
+
+        val css = listOf(
+            width(100.px)
+        )
+
+        val root = ReactTestRenderer.aktCreate {
+            Div(css = css, className = testClass)
+        }
+
+        val json = root.toJSON().asDynamic()
+        val cssClassName = cssRegistry.findOrCreateClassName(css)
+        val actualClassName = json.props.className
+        val expectedClassName = "$testClass $cssClassName"
+
+        assertEquals(expectedClassName, actualClassName)
+    }
+
+    @Test
     fun testInlineCssInjectedIntoDocument() {
         val css = listOf(
             width(100.px),

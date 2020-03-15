@@ -4,6 +4,8 @@ import kotlin.js.Json
 
 sealed class CssElement
 
+typealias CssStyle = List<CssElement?>
+
 abstract class AbstractStyleProperty : CssElement() {
     abstract val key: String
     abstract val value: String?
