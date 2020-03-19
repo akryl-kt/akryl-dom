@@ -256,6 +256,9 @@ class CssTest {
 
         selector = tag("div")[foo]()
         assertEquals("& div.foo", selector.selector)
+
+        selector = Div[foo]()
+        assertEquals("& div.foo", selector.selector)
     }
 
     @Test

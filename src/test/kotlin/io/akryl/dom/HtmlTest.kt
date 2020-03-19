@@ -267,4 +267,69 @@ class HtmlTest {
         )
         assertEquals(listOf(0), result)
     }
+
+    @Test
+    fun testDivWithDefaults() {
+        val div = DivFactory(
+            defaults = mapOf("className" to "foo", "id" to "bar")
+        )
+
+        val root = ReactTestRenderer.aktCreate {
+            div(
+                children = listOf(
+                    Text("Hello, World!")
+                ),
+                draggable = true
+            )
+        }
+
+        assertJsonEquals(
+            json(
+                "type" to "div",
+                "props" to json(
+                    "id" to "bar",
+                    "className" to "foo",
+                    "draggable" to true
+                ),
+                "children" to arrayOf(
+                    "Hello, World!"
+                )
+            ),
+            root.toJSON()
+        )
+    }
+
+    @Test
+    fun testDivWithDefaultsOverrides() {
+        val div = DivFactory(
+            defaults = mapOf("className" to "foo", "id" to "bar")
+        )
+
+        val div2 = div.with(mapOf("className" to "foo2", "draggable" to true))
+
+        assertEquals(
+            mapOf("className" to "foo2", "id" to "bar", "draggable" to true),
+            div2.defaults
+        )
+
+        val root = ReactTestRenderer.aktCreate {
+            div2(
+                className = "foo3",
+                id = "bar3"
+            )
+        }
+
+        assertJsonEquals(
+            json(
+                "type" to "div",
+                "props" to json(
+                    "id" to "bar3",
+                    "className" to "foo3",
+                    "draggable" to true
+                ),
+                "children" to null
+            ),
+            root.toJSON()
+        )
+    }
 }

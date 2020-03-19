@@ -62,9 +62,11 @@ data class ClassList(val classes: List<CssClass>) : Selector {
 /**
  * Tag name CSS selector.
  */
-data class TagName(val value: String) : Selector {
+open class TagName(val value: String) : Selector {
     override val selector get() = value
     override fun toString() = value
+    override fun equals(other: Any?) = other is TagName && other.value == value
+    override fun hashCode() = value.hashCode()
 
     operator fun get(inner: ClassList) = ComplexSelector("$value${inner.selector}")
     operator fun get(inner: CssClass) = ComplexSelector("$value${inner.selector}")
