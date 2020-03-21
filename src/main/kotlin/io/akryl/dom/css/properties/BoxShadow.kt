@@ -65,4 +65,4 @@ data class BoxShadow(override val value: String?) : AbstractStyleProperty() {
     operator fun invoke(value: String?) = BoxShadow(value)
 }
 
-val boxShadow = BoxShadow(null)
+val boxShadow get() = BoxShadow(null)

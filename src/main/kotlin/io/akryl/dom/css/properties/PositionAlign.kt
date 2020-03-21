@@ -12,5 +12,5 @@ class PositionAlignPropertyBuilder(name: String) : PropertyBuilder(name) {
     operator fun invoke(horizontal: Linear, vertical: Linear) = this("$horizontal $vertical")
 }
 
-val backgroundPosition = PositionAlignPropertyBuilder("backgroundPosition")
-val objectPosition = PositionAlignPropertyBuilder("objectPosition")
+val backgroundPosition get() = PositionAlignPropertyBuilder("backgroundPosition")
+val objectPosition get() = PositionAlignPropertyBuilder("objectPosition")

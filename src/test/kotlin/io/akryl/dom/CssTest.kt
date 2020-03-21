@@ -129,6 +129,20 @@ class CssTest {
     }
 
     @Test
+    fun testObjectDsl() {
+        assertEquals("flex", flex.key)
+
+        var style = flex(1, 1, 100.pct)
+        assertEquals("1 1 100%", style.value)
+
+        style = flex(0, 0, Linear.auto)
+        assertEquals("0 0 auto", style.value)
+
+        style = flex.auto()
+        assertEquals("auto", style.value)
+    }
+
+    @Test
     fun testTransformDsl() {
         assertEquals("transform", transform.key)
         assertNull(transform.value)

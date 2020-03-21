@@ -4,7 +4,9 @@ package io.akryl.dom.css.properties
 
 import io.akryl.dom.css.PropertyBuilder
 
-object flex : PropertyBuilder("flex") {
+val flex get() = flexPropertyBuilder()
+
+class flexPropertyBuilder : PropertyBuilder("flex") {
     fun auto() = this("auto")
     fun none() = this("none")
     fun initial() = this("initial")

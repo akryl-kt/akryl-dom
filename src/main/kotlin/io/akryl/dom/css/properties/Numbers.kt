@@ -20,9 +20,9 @@ class NumberPropertyBuilder(name: String) : PropertyBuilder(name) {
     operator fun invoke(value: Number) = this(value.toString())
 }
 
-val flexGrow = NumberPropertyBuilder("flexGrow")
-val flexShrink = NumberPropertyBuilder("flexShrink")
-val opacity = NumberPropertyBuilder("opacity")
-val strokeWidth = NumberPropertyBuilder("strokeWidth")
+val flexGrow get() = NumberPropertyBuilder("flexGrow")
+val flexShrink get() = NumberPropertyBuilder("flexShrink")
+val opacity get() = NumberPropertyBuilder("opacity")
+val strokeWidth get() = NumberPropertyBuilder("strokeWidth")
 
-val zIndex = IntPropertyBuilder("zIndex")
+val zIndex get() = IntPropertyBuilder("zIndex")

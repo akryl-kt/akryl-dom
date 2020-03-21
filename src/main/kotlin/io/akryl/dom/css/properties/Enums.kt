@@ -16,7 +16,9 @@ enum class Vertical {
     bottom
 }
 
-object textAlign : PropertyBuilder("textAlign") {
+val textAlign get() = textAlignPropertyBuilder()
+
+class textAlignPropertyBuilder : PropertyBuilder("textAlign") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
@@ -31,7 +33,9 @@ object textAlign : PropertyBuilder("textAlign") {
     fun matchParent() = this("match-parent")
 }
 
-object boxSizing : PropertyBuilder("boxSizing") {
+val boxSizing get() = boxSizingPropertyBuilder()
+
+class boxSizingPropertyBuilder : PropertyBuilder("boxSizing") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
@@ -40,7 +44,9 @@ object boxSizing : PropertyBuilder("boxSizing") {
     fun borderBox() = this("border-box")
 }
 
-object fontStyle : PropertyBuilder("fontStyle") {
+val fontStyle get() = fontStylePropertyBuilder()
+
+class fontStylePropertyBuilder : PropertyBuilder("fontStyle") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -49,7 +55,9 @@ object fontStyle : PropertyBuilder("fontStyle") {
     fun oblique() = this("oblique")
 }
 
-object listStyleType : PropertyBuilder("listStyleType") {
+val listStyleType get() = listStyleTypePropertyBuilder()
+
+class listStyleTypePropertyBuilder : PropertyBuilder("listStyleType") {
     fun none() = this("none")
     fun initial() = this("initial")
     fun inherit() = this("inherit")
@@ -77,7 +85,9 @@ object listStyleType : PropertyBuilder("listStyleType") {
     fun upperRoman() = this("upper-roman")
 }
 
-object display : PropertyBuilder("display") {
+val display get() = displayPropertyBuilder()
+
+class displayPropertyBuilder : PropertyBuilder("display") {
     fun none() = this("none")
     fun initial() = this("initial")
     fun inherit() = this("inherit")
@@ -112,7 +122,9 @@ object display : PropertyBuilder("display") {
     fun inlineGrid() = this("inline-grid")
 }
 
-object wordBreak : PropertyBuilder("wordBreak") {
+val wordBreak get() = wordBreakPropertyBuilder()
+
+class wordBreakPropertyBuilder : PropertyBuilder("wordBreak") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -122,7 +134,9 @@ object wordBreak : PropertyBuilder("wordBreak") {
     fun breakWord() = this("break-word")
 }
 
-object alignContent : PropertyBuilder("alignContent") {
+val alignContent get() = alignContentPropertyBuilder()
+
+class alignContentPropertyBuilder : PropertyBuilder("alignContent") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -134,7 +148,9 @@ object alignContent : PropertyBuilder("alignContent") {
     fun spaceAround() = this("space-around")
 }
 
-object alignItems : PropertyBuilder("alignItems") {
+val alignItems get() = alignItemsPropertyBuilder()
+
+class alignItemsPropertyBuilder : PropertyBuilder("alignItems") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -145,7 +161,9 @@ object alignItems : PropertyBuilder("alignItems") {
     fun baseline() = this("baseline")
 }
 
-object alignSelf : PropertyBuilder("alignSelf") {
+val alignSelf get() = alignSelfPropertyBuilder()
+
+class alignSelfPropertyBuilder : PropertyBuilder("alignSelf") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -157,7 +175,9 @@ object alignSelf : PropertyBuilder("alignSelf") {
     fun baseline() = this("baseline")
 }
 
-object extend : PropertyBuilder("extend") {
+val extend get() = extendPropertyBuilder()
+
+class extendPropertyBuilder : PropertyBuilder("extend") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -166,7 +186,9 @@ object extend : PropertyBuilder("extend") {
     fun contentBox() = this("content-box")
 }
 
-object backgroundAttachment : PropertyBuilder("backgroundAttachment") {
+val backgroundAttachment get() = backgroundAttachmentPropertyBuilder()
+
+class backgroundAttachmentPropertyBuilder : PropertyBuilder("backgroundAttachment") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -175,7 +197,9 @@ object backgroundAttachment : PropertyBuilder("backgroundAttachment") {
     fun local() = this("local")
 }
 
-object blendMode : PropertyBuilder("blendMode") {
+val blendMode get() = blendModePropertyBuilder()
+
+class blendModePropertyBuilder : PropertyBuilder("blendMode") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -191,7 +215,9 @@ object blendMode : PropertyBuilder("blendMode") {
     fun luminosity() = this("luminosity")
 }
 
-object position : PropertyBuilder("position") {
+val position get() = positionPropertyBuilder()
+
+class positionPropertyBuilder : PropertyBuilder("position") {
     fun static() = this("static")
     fun absolute() = this("absolute")
     fun fixed() = this("fixed")
@@ -201,7 +227,9 @@ object position : PropertyBuilder("position") {
     fun inherit() = this("inherit")
 }
 
-object fontWeight : PropertyBuilder("fontWeight") {
+val fontWeight get() = fontWeightPropertyBuilder()
+
+class fontWeightPropertyBuilder : PropertyBuilder("fontWeight") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
@@ -221,7 +249,9 @@ object fontWeight : PropertyBuilder("fontWeight") {
     fun w100() = this("100")
 }
 
-object flexDirection : PropertyBuilder("flexDirection") {
+val flexDirection get() = flexDirectionPropertyBuilder()
+
+class flexDirectionPropertyBuilder : PropertyBuilder("flexDirection") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -231,7 +261,9 @@ object flexDirection : PropertyBuilder("flexDirection") {
     fun columnReverse() = this("column-reverse")
 }
 
-object flexWrap : PropertyBuilder("flexWrap") {
+val flexWrap get() = flexWrapPropertyBuilder()
+
+class flexWrapPropertyBuilder : PropertyBuilder("flexWrap") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -240,7 +272,9 @@ object flexWrap : PropertyBuilder("flexWrap") {
     fun wrapReverse() = this("wrap-reverse")
 }
 
-object textDecoration : PropertyBuilder("textDecoration") {
+val textDecoration get() = textDecorationPropertyBuilder()
+
+class textDecorationPropertyBuilder : PropertyBuilder("textDecoration") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -250,7 +284,9 @@ object textDecoration : PropertyBuilder("textDecoration") {
     fun lineThrough() = this("line-through")
 }
 
-object textDecorationStyle : PropertyBuilder("textDecorationStyle") {
+val textDecorationStyle get() = textDecorationStylePropertyBuilder()
+
+class textDecorationStylePropertyBuilder : PropertyBuilder("textDecorationStyle") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -262,7 +298,9 @@ object textDecorationStyle : PropertyBuilder("textDecorationStyle") {
     fun wavy() = this("wavy")
 }
 
-object textDecorationLine : PropertyBuilder("textDecorationLine") {
+val textDecorationLine get() = textDecorationLinePropertyBuilder()
+
+class textDecorationLinePropertyBuilder : PropertyBuilder("textDecorationLine") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -272,7 +310,9 @@ object textDecorationLine : PropertyBuilder("textDecorationLine") {
     fun lineThrough() = this("line-through")
 }
 
-object cursor : PropertyBuilder("cursor") {
+val cursor get() = cursorPropertyBuilder()
+
+class cursorPropertyBuilder : PropertyBuilder("cursor") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -314,7 +354,9 @@ object cursor : PropertyBuilder("cursor") {
     fun zoomOut() = this("zoom-out")
 }
 
-object overflow : PropertyBuilder("overflow") {
+val overflow get() = overflowPropertyBuilder()
+
+class overflowPropertyBuilder : PropertyBuilder("overflow") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -324,7 +366,9 @@ object overflow : PropertyBuilder("overflow") {
     fun auto() = this("auto")
 }
 
-object float : PropertyBuilder("float") {
+val float get() = floatPropertyBuilder()
+
+class floatPropertyBuilder : PropertyBuilder("float") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -333,7 +377,9 @@ object float : PropertyBuilder("float") {
     fun right() = this("right")
 }
 
-object verticalAlign : PropertyBuilder("verticalAlign") {
+val verticalAlign get() = verticalAlignPropertyBuilder()
+
+class verticalAlignPropertyBuilder : PropertyBuilder("verticalAlign") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -349,7 +395,9 @@ object verticalAlign : PropertyBuilder("verticalAlign") {
     operator fun invoke(value: Linear) = this(value.toString())
 }
 
-object textOverflow : PropertyBuilder("textOverflow") {
+val textOverflow get() = textOverflowPropertyBuilder()
+
+class textOverflowPropertyBuilder : PropertyBuilder("textOverflow") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -357,7 +405,9 @@ object textOverflow : PropertyBuilder("textOverflow") {
     fun ellipsis() = this("ellipsis")
 }
 
-object whiteSpace : PropertyBuilder("whiteSpace") {
+val whiteSpace get() = whiteSpacePropertyBuilder()
+
+class whiteSpacePropertyBuilder : PropertyBuilder("whiteSpace") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 
@@ -368,7 +418,9 @@ object whiteSpace : PropertyBuilder("whiteSpace") {
     fun preWrap() = this("pre-wrap")
 }
 
-object objectFit : PropertyBuilder("objectFit") {
+val objectFit get() = objectFitPropertyBuilder()
+
+class objectFitPropertyBuilder : PropertyBuilder("objectFit") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun none() = this("none")
@@ -379,7 +431,9 @@ object objectFit : PropertyBuilder("objectFit") {
     fun scaleDown() = this("scale-down")
 }
 
-object userSelect : PropertyBuilder("userSelect") {
+val userSelect get() = userSelectPropertyBuilder()
+
+class userSelectPropertyBuilder : PropertyBuilder("userSelect") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
@@ -391,7 +445,9 @@ object userSelect : PropertyBuilder("userSelect") {
     fun all() = this("all")
 }
 
-object justifyContent : PropertyBuilder("justifyContent") {
+val justifyContent get() = justifyContentPropertyBuilder()
+
+class justifyContentPropertyBuilder : PropertyBuilder("justifyContent") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")
@@ -417,7 +473,9 @@ object justifyContent : PropertyBuilder("justifyContent") {
     fun unsafeCenter() = this("unsafe center")
 }
 
-object pointerEvents : PropertyBuilder("pointerEvents") {
+val pointerEvents get() = pointerEventsPropertyBuilder()
+
+class pointerEventsPropertyBuilder : PropertyBuilder("pointerEvents") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")

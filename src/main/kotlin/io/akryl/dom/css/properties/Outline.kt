@@ -4,7 +4,9 @@ package io.akryl.dom.css.properties
 
 import io.akryl.dom.css.PropertyBuilder
 
-object outline : PropertyBuilder("outline") {
+val outline get() = outlinePropertyBuilder()
+
+class outlinePropertyBuilder : PropertyBuilder("outline") {
     fun none() = this("none")
     fun initial() = this("initial")
     fun inherit() = this("inherit")

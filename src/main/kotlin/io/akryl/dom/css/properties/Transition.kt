@@ -36,7 +36,7 @@ data class Transition(override val value: String?) : AbstractStyleProperty(), Pr
     operator fun invoke(value: String?) = Transition(value)
 }
 
-val transition = Transition(null)
+val transition get() = Transition(null)
 
 class Timing(val value: String) {
     companion object {

@@ -93,7 +93,7 @@ private inline fun listeners(
     return result
 }
 
-val A = AFactory()
+val A get() = AFactory()
 
 class AFactory(val defaults: Map<String, Any>? = null) : TagName("a"), ElementFactory<AFactory> {
     override fun with(defaults: Map<String, Any>) = AFactory((this.defaults ?: emptyMap()) + defaults)
@@ -237,7 +237,7 @@ class AFactory(val defaults: Map<String, Any>? = null) : TagName("a"), ElementFa
     )
 }
 
-val Abbr = AbbrFactory()
+val Abbr get() = AbbrFactory()
 
 class AbbrFactory(val defaults: Map<String, Any>? = null) : TagName("abbr"), ElementFactory<AbbrFactory> {
     override fun with(defaults: Map<String, Any>) = AbbrFactory((this.defaults ?: emptyMap()) + defaults)
@@ -365,7 +365,7 @@ class AbbrFactory(val defaults: Map<String, Any>? = null) : TagName("abbr"), Ele
     )
 }
 
-val Address = AddressFactory()
+val Address get() = AddressFactory()
 
 class AddressFactory(val defaults: Map<String, Any>? = null) : TagName("address"), ElementFactory<AddressFactory> {
     override fun with(defaults: Map<String, Any>) = AddressFactory((this.defaults ?: emptyMap()) + defaults)
@@ -493,7 +493,7 @@ class AddressFactory(val defaults: Map<String, Any>? = null) : TagName("address"
     )
 }
 
-val Area = AreaFactory()
+val Area get() = AreaFactory()
 
 class AreaFactory(val defaults: Map<String, Any>? = null) : TagName("area"), ElementFactory<AreaFactory> {
     override fun with(defaults: Map<String, Any>) = AreaFactory((this.defaults ?: emptyMap()) + defaults)
@@ -641,7 +641,7 @@ class AreaFactory(val defaults: Map<String, Any>? = null) : TagName("area"), Ele
     )
 }
 
-val Article = ArticleFactory()
+val Article get() = ArticleFactory()
 
 class ArticleFactory(val defaults: Map<String, Any>? = null) : TagName("article"), ElementFactory<ArticleFactory> {
     override fun with(defaults: Map<String, Any>) = ArticleFactory((this.defaults ?: emptyMap()) + defaults)
@@ -769,7 +769,7 @@ class ArticleFactory(val defaults: Map<String, Any>? = null) : TagName("article"
     )
 }
 
-val Aside = AsideFactory()
+val Aside get() = AsideFactory()
 
 class AsideFactory(val defaults: Map<String, Any>? = null) : TagName("aside"), ElementFactory<AsideFactory> {
     override fun with(defaults: Map<String, Any>) = AsideFactory((this.defaults ?: emptyMap()) + defaults)
@@ -897,7 +897,7 @@ class AsideFactory(val defaults: Map<String, Any>? = null) : TagName("aside"), E
     )
 }
 
-val Audio = AudioFactory()
+val Audio get() = AudioFactory()
 
 class AudioFactory(val defaults: Map<String, Any>? = null) : TagName("audio"), ElementFactory<AudioFactory> {
     override fun with(defaults: Map<String, Any>) = AudioFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1037,7 +1037,7 @@ class AudioFactory(val defaults: Map<String, Any>? = null) : TagName("audio"), E
     )
 }
 
-val B = BFactory()
+val B get() = BFactory()
 
 class BFactory(val defaults: Map<String, Any>? = null) : TagName("b"), ElementFactory<BFactory> {
     override fun with(defaults: Map<String, Any>) = BFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1165,7 +1165,7 @@ class BFactory(val defaults: Map<String, Any>? = null) : TagName("b"), ElementFa
     )
 }
 
-val Base = BaseFactory()
+val Base get() = BaseFactory()
 
 class BaseFactory(val defaults: Map<String, Any>? = null) : TagName("base"), ElementFactory<BaseFactory> {
     override fun with(defaults: Map<String, Any>) = BaseFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1297,7 +1297,7 @@ class BaseFactory(val defaults: Map<String, Any>? = null) : TagName("base"), Ele
     )
 }
 
-val Bdi = BdiFactory()
+val Bdi get() = BdiFactory()
 
 class BdiFactory(val defaults: Map<String, Any>? = null) : TagName("bdi"), ElementFactory<BdiFactory> {
     override fun with(defaults: Map<String, Any>) = BdiFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1425,7 +1425,7 @@ class BdiFactory(val defaults: Map<String, Any>? = null) : TagName("bdi"), Eleme
     )
 }
 
-val Bdo = BdoFactory()
+val Bdo get() = BdoFactory()
 
 class BdoFactory(val defaults: Map<String, Any>? = null) : TagName("bdo"), ElementFactory<BdoFactory> {
     override fun with(defaults: Map<String, Any>) = BdoFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1553,7 +1553,7 @@ class BdoFactory(val defaults: Map<String, Any>? = null) : TagName("bdo"), Eleme
     )
 }
 
-val Blockquote = BlockquoteFactory()
+val Blockquote get() = BlockquoteFactory()
 
 class BlockquoteFactory(val defaults: Map<String, Any>? = null) : TagName("blockquote"), ElementFactory<BlockquoteFactory> {
     override fun with(defaults: Map<String, Any>) = BlockquoteFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1683,7 +1683,7 @@ class BlockquoteFactory(val defaults: Map<String, Any>? = null) : TagName("block
     )
 }
 
-val Body = BodyFactory()
+val Body get() = BodyFactory()
 
 class BodyFactory(val defaults: Map<String, Any>? = null) : TagName("body"), ElementFactory<BodyFactory> {
     override fun with(defaults: Map<String, Any>) = BodyFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1811,7 +1811,7 @@ class BodyFactory(val defaults: Map<String, Any>? = null) : TagName("body"), Ele
     )
 }
 
-val Br = BrFactory()
+val Br get() = BrFactory()
 
 class BrFactory(val defaults: Map<String, Any>? = null) : TagName("br"), ElementFactory<BrFactory> {
     override fun with(defaults: Map<String, Any>) = BrFactory((this.defaults ?: emptyMap()) + defaults)
@@ -1939,7 +1939,7 @@ class BrFactory(val defaults: Map<String, Any>? = null) : TagName("br"), Element
     )
 }
 
-val Button = ButtonFactory()
+val Button get() = ButtonFactory()
 
 class ButtonFactory(val defaults: Map<String, Any>? = null) : TagName("button"), ElementFactory<ButtonFactory> {
     override fun with(defaults: Map<String, Any>) = ButtonFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2089,7 +2089,7 @@ class ButtonFactory(val defaults: Map<String, Any>? = null) : TagName("button"),
     )
 }
 
-val Canvas = CanvasFactory()
+val Canvas get() = CanvasFactory()
 
 class CanvasFactory(val defaults: Map<String, Any>? = null) : TagName("canvas"), ElementFactory<CanvasFactory> {
     override fun with(defaults: Map<String, Any>) = CanvasFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2221,7 +2221,7 @@ class CanvasFactory(val defaults: Map<String, Any>? = null) : TagName("canvas"),
     )
 }
 
-val Caption = CaptionFactory()
+val Caption get() = CaptionFactory()
 
 class CaptionFactory(val defaults: Map<String, Any>? = null) : TagName("caption"), ElementFactory<CaptionFactory> {
     override fun with(defaults: Map<String, Any>) = CaptionFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2349,7 +2349,7 @@ class CaptionFactory(val defaults: Map<String, Any>? = null) : TagName("caption"
     )
 }
 
-val Cite = CiteFactory()
+val Cite get() = CiteFactory()
 
 class CiteFactory(val defaults: Map<String, Any>? = null) : TagName("cite"), ElementFactory<CiteFactory> {
     override fun with(defaults: Map<String, Any>) = CiteFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2477,7 +2477,7 @@ class CiteFactory(val defaults: Map<String, Any>? = null) : TagName("cite"), Ele
     )
 }
 
-val Code = CodeFactory()
+val Code get() = CodeFactory()
 
 class CodeFactory(val defaults: Map<String, Any>? = null) : TagName("code"), ElementFactory<CodeFactory> {
     override fun with(defaults: Map<String, Any>) = CodeFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2605,7 +2605,7 @@ class CodeFactory(val defaults: Map<String, Any>? = null) : TagName("code"), Ele
     )
 }
 
-val Col = ColFactory()
+val Col get() = ColFactory()
 
 class ColFactory(val defaults: Map<String, Any>? = null) : TagName("col"), ElementFactory<ColFactory> {
     override fun with(defaults: Map<String, Any>) = ColFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2735,7 +2735,7 @@ class ColFactory(val defaults: Map<String, Any>? = null) : TagName("col"), Eleme
     )
 }
 
-val Colgroup = ColgroupFactory()
+val Colgroup get() = ColgroupFactory()
 
 class ColgroupFactory(val defaults: Map<String, Any>? = null) : TagName("colgroup"), ElementFactory<ColgroupFactory> {
     override fun with(defaults: Map<String, Any>) = ColgroupFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2865,7 +2865,7 @@ class ColgroupFactory(val defaults: Map<String, Any>? = null) : TagName("colgrou
     )
 }
 
-val Data = DataFactory()
+val Data get() = DataFactory()
 
 class DataFactory(val defaults: Map<String, Any>? = null) : TagName("data"), ElementFactory<DataFactory> {
     override fun with(defaults: Map<String, Any>) = DataFactory((this.defaults ?: emptyMap()) + defaults)
@@ -2993,7 +2993,7 @@ class DataFactory(val defaults: Map<String, Any>? = null) : TagName("data"), Ele
     )
 }
 
-val Datalist = DatalistFactory()
+val Datalist get() = DatalistFactory()
 
 class DatalistFactory(val defaults: Map<String, Any>? = null) : TagName("datalist"), ElementFactory<DatalistFactory> {
     override fun with(defaults: Map<String, Any>) = DatalistFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3121,7 +3121,7 @@ class DatalistFactory(val defaults: Map<String, Any>? = null) : TagName("datalis
     )
 }
 
-val Dd = DdFactory()
+val Dd get() = DdFactory()
 
 class DdFactory(val defaults: Map<String, Any>? = null) : TagName("dd"), ElementFactory<DdFactory> {
     override fun with(defaults: Map<String, Any>) = DdFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3249,7 +3249,7 @@ class DdFactory(val defaults: Map<String, Any>? = null) : TagName("dd"), Element
     )
 }
 
-val Del = DelFactory()
+val Del get() = DelFactory()
 
 class DelFactory(val defaults: Map<String, Any>? = null) : TagName("del"), ElementFactory<DelFactory> {
     override fun with(defaults: Map<String, Any>) = DelFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3381,7 +3381,7 @@ class DelFactory(val defaults: Map<String, Any>? = null) : TagName("del"), Eleme
     )
 }
 
-val Details = DetailsFactory()
+val Details get() = DetailsFactory()
 
 class DetailsFactory(val defaults: Map<String, Any>? = null) : TagName("details"), ElementFactory<DetailsFactory> {
     override fun with(defaults: Map<String, Any>) = DetailsFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3511,7 +3511,7 @@ class DetailsFactory(val defaults: Map<String, Any>? = null) : TagName("details"
     )
 }
 
-val Dfn = DfnFactory()
+val Dfn get() = DfnFactory()
 
 class DfnFactory(val defaults: Map<String, Any>? = null) : TagName("dfn"), ElementFactory<DfnFactory> {
     override fun with(defaults: Map<String, Any>) = DfnFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3639,7 +3639,7 @@ class DfnFactory(val defaults: Map<String, Any>? = null) : TagName("dfn"), Eleme
     )
 }
 
-val Dialog = DialogFactory()
+val Dialog get() = DialogFactory()
 
 class DialogFactory(val defaults: Map<String, Any>? = null) : TagName("dialog"), ElementFactory<DialogFactory> {
     override fun with(defaults: Map<String, Any>) = DialogFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3769,7 +3769,7 @@ class DialogFactory(val defaults: Map<String, Any>? = null) : TagName("dialog"),
     )
 }
 
-val Div = DivFactory()
+val Div get() = DivFactory()
 
 class DivFactory(val defaults: Map<String, Any>? = null) : TagName("div"), ElementFactory<DivFactory> {
     override fun with(defaults: Map<String, Any>) = DivFactory((this.defaults ?: emptyMap()) + defaults)
@@ -3897,7 +3897,7 @@ class DivFactory(val defaults: Map<String, Any>? = null) : TagName("div"), Eleme
     )
 }
 
-val Dl = DlFactory()
+val Dl get() = DlFactory()
 
 class DlFactory(val defaults: Map<String, Any>? = null) : TagName("dl"), ElementFactory<DlFactory> {
     override fun with(defaults: Map<String, Any>) = DlFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4025,7 +4025,7 @@ class DlFactory(val defaults: Map<String, Any>? = null) : TagName("dl"), Element
     )
 }
 
-val Dt = DtFactory()
+val Dt get() = DtFactory()
 
 class DtFactory(val defaults: Map<String, Any>? = null) : TagName("dt"), ElementFactory<DtFactory> {
     override fun with(defaults: Map<String, Any>) = DtFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4153,7 +4153,7 @@ class DtFactory(val defaults: Map<String, Any>? = null) : TagName("dt"), Element
     )
 }
 
-val Em = EmFactory()
+val Em get() = EmFactory()
 
 class EmFactory(val defaults: Map<String, Any>? = null) : TagName("em"), ElementFactory<EmFactory> {
     override fun with(defaults: Map<String, Any>) = EmFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4281,7 +4281,7 @@ class EmFactory(val defaults: Map<String, Any>? = null) : TagName("em"), Element
     )
 }
 
-val Embed = EmbedFactory()
+val Embed get() = EmbedFactory()
 
 class EmbedFactory(val defaults: Map<String, Any>? = null) : TagName("embed"), ElementFactory<EmbedFactory> {
     override fun with(defaults: Map<String, Any>) = EmbedFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4417,7 +4417,7 @@ class EmbedFactory(val defaults: Map<String, Any>? = null) : TagName("embed"), E
     )
 }
 
-val Fieldset = FieldsetFactory()
+val Fieldset get() = FieldsetFactory()
 
 class FieldsetFactory(val defaults: Map<String, Any>? = null) : TagName("fieldset"), ElementFactory<FieldsetFactory> {
     override fun with(defaults: Map<String, Any>) = FieldsetFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4551,7 +4551,7 @@ class FieldsetFactory(val defaults: Map<String, Any>? = null) : TagName("fieldse
     )
 }
 
-val Figcaption = FigcaptionFactory()
+val Figcaption get() = FigcaptionFactory()
 
 class FigcaptionFactory(val defaults: Map<String, Any>? = null) : TagName("figcaption"), ElementFactory<FigcaptionFactory> {
     override fun with(defaults: Map<String, Any>) = FigcaptionFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4679,7 +4679,7 @@ class FigcaptionFactory(val defaults: Map<String, Any>? = null) : TagName("figca
     )
 }
 
-val Figure = FigureFactory()
+val Figure get() = FigureFactory()
 
 class FigureFactory(val defaults: Map<String, Any>? = null) : TagName("figure"), ElementFactory<FigureFactory> {
     override fun with(defaults: Map<String, Any>) = FigureFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4807,7 +4807,7 @@ class FigureFactory(val defaults: Map<String, Any>? = null) : TagName("figure"),
     )
 }
 
-val Footer = FooterFactory()
+val Footer get() = FooterFactory()
 
 class FooterFactory(val defaults: Map<String, Any>? = null) : TagName("footer"), ElementFactory<FooterFactory> {
     override fun with(defaults: Map<String, Any>) = FooterFactory((this.defaults ?: emptyMap()) + defaults)
@@ -4935,7 +4935,7 @@ class FooterFactory(val defaults: Map<String, Any>? = null) : TagName("footer"),
     )
 }
 
-val Form = FormFactory()
+val Form get() = FormFactory()
 
 class FormFactory(val defaults: Map<String, Any>? = null) : TagName("form"), ElementFactory<FormFactory> {
     override fun with(defaults: Map<String, Any>) = FormFactory((this.defaults ?: emptyMap()) + defaults)
@@ -5079,7 +5079,7 @@ class FormFactory(val defaults: Map<String, Any>? = null) : TagName("form"), Ele
     )
 }
 
-val H1 = H1Factory()
+val H1 get() = H1Factory()
 
 class H1Factory(val defaults: Map<String, Any>? = null) : TagName("h1"), ElementFactory<H1Factory> {
     override fun with(defaults: Map<String, Any>) = H1Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5207,7 +5207,7 @@ class H1Factory(val defaults: Map<String, Any>? = null) : TagName("h1"), Element
     )
 }
 
-val H2 = H2Factory()
+val H2 get() = H2Factory()
 
 class H2Factory(val defaults: Map<String, Any>? = null) : TagName("h2"), ElementFactory<H2Factory> {
     override fun with(defaults: Map<String, Any>) = H2Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5335,7 +5335,7 @@ class H2Factory(val defaults: Map<String, Any>? = null) : TagName("h2"), Element
     )
 }
 
-val H3 = H3Factory()
+val H3 get() = H3Factory()
 
 class H3Factory(val defaults: Map<String, Any>? = null) : TagName("h3"), ElementFactory<H3Factory> {
     override fun with(defaults: Map<String, Any>) = H3Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5463,7 +5463,7 @@ class H3Factory(val defaults: Map<String, Any>? = null) : TagName("h3"), Element
     )
 }
 
-val H4 = H4Factory()
+val H4 get() = H4Factory()
 
 class H4Factory(val defaults: Map<String, Any>? = null) : TagName("h4"), ElementFactory<H4Factory> {
     override fun with(defaults: Map<String, Any>) = H4Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5591,7 +5591,7 @@ class H4Factory(val defaults: Map<String, Any>? = null) : TagName("h4"), Element
     )
 }
 
-val H5 = H5Factory()
+val H5 get() = H5Factory()
 
 class H5Factory(val defaults: Map<String, Any>? = null) : TagName("h5"), ElementFactory<H5Factory> {
     override fun with(defaults: Map<String, Any>) = H5Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5719,7 +5719,7 @@ class H5Factory(val defaults: Map<String, Any>? = null) : TagName("h5"), Element
     )
 }
 
-val H6 = H6Factory()
+val H6 get() = H6Factory()
 
 class H6Factory(val defaults: Map<String, Any>? = null) : TagName("h6"), ElementFactory<H6Factory> {
     override fun with(defaults: Map<String, Any>) = H6Factory((this.defaults ?: emptyMap()) + defaults)
@@ -5847,7 +5847,7 @@ class H6Factory(val defaults: Map<String, Any>? = null) : TagName("h6"), Element
     )
 }
 
-val Head = HeadFactory()
+val Head get() = HeadFactory()
 
 class HeadFactory(val defaults: Map<String, Any>? = null) : TagName("head"), ElementFactory<HeadFactory> {
     override fun with(defaults: Map<String, Any>) = HeadFactory((this.defaults ?: emptyMap()) + defaults)
@@ -5975,7 +5975,7 @@ class HeadFactory(val defaults: Map<String, Any>? = null) : TagName("head"), Ele
     )
 }
 
-val Header = HeaderFactory()
+val Header get() = HeaderFactory()
 
 class HeaderFactory(val defaults: Map<String, Any>? = null) : TagName("header"), ElementFactory<HeaderFactory> {
     override fun with(defaults: Map<String, Any>) = HeaderFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6103,7 +6103,7 @@ class HeaderFactory(val defaults: Map<String, Any>? = null) : TagName("header"),
     )
 }
 
-val Hr = HrFactory()
+val Hr get() = HrFactory()
 
 class HrFactory(val defaults: Map<String, Any>? = null) : TagName("hr"), ElementFactory<HrFactory> {
     override fun with(defaults: Map<String, Any>) = HrFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6231,7 +6231,7 @@ class HrFactory(val defaults: Map<String, Any>? = null) : TagName("hr"), Element
     )
 }
 
-val Html = HtmlFactory()
+val Html get() = HtmlFactory()
 
 class HtmlFactory(val defaults: Map<String, Any>? = null) : TagName("html"), ElementFactory<HtmlFactory> {
     override fun with(defaults: Map<String, Any>) = HtmlFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6361,7 +6361,7 @@ class HtmlFactory(val defaults: Map<String, Any>? = null) : TagName("html"), Ele
     )
 }
 
-val I = IFactory()
+val I get() = IFactory()
 
 class IFactory(val defaults: Map<String, Any>? = null) : TagName("i"), ElementFactory<IFactory> {
     override fun with(defaults: Map<String, Any>) = IFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6489,7 +6489,7 @@ class IFactory(val defaults: Map<String, Any>? = null) : TagName("i"), ElementFa
     )
 }
 
-val Iframe = IframeFactory()
+val Iframe get() = IframeFactory()
 
 class IframeFactory(val defaults: Map<String, Any>? = null) : TagName("iframe"), ElementFactory<IframeFactory> {
     override fun with(defaults: Map<String, Any>) = IframeFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6629,7 +6629,7 @@ class IframeFactory(val defaults: Map<String, Any>? = null) : TagName("iframe"),
     )
 }
 
-val Img = ImgFactory()
+val Img get() = ImgFactory()
 
 class ImgFactory(val defaults: Map<String, Any>? = null) : TagName("img"), ElementFactory<ImgFactory> {
     override fun with(defaults: Map<String, Any>) = ImgFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6771,7 +6771,7 @@ class ImgFactory(val defaults: Map<String, Any>? = null) : TagName("img"), Eleme
     )
 }
 
-val Input = InputFactory()
+val Input get() = InputFactory()
 
 class InputFactory(val defaults: Map<String, Any>? = null) : TagName("input"), ElementFactory<InputFactory> {
     override fun with(defaults: Map<String, Any>) = InputFactory((this.defaults ?: emptyMap()) + defaults)
@@ -6959,7 +6959,7 @@ class InputFactory(val defaults: Map<String, Any>? = null) : TagName("input"), E
     )
 }
 
-val Ins = InsFactory()
+val Ins get() = InsFactory()
 
 class InsFactory(val defaults: Map<String, Any>? = null) : TagName("ins"), ElementFactory<InsFactory> {
     override fun with(defaults: Map<String, Any>) = InsFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7091,7 +7091,7 @@ class InsFactory(val defaults: Map<String, Any>? = null) : TagName("ins"), Eleme
     )
 }
 
-val Kbd = KbdFactory()
+val Kbd get() = KbdFactory()
 
 class KbdFactory(val defaults: Map<String, Any>? = null) : TagName("kbd"), ElementFactory<KbdFactory> {
     override fun with(defaults: Map<String, Any>) = KbdFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7219,7 +7219,7 @@ class KbdFactory(val defaults: Map<String, Any>? = null) : TagName("kbd"), Eleme
     )
 }
 
-val Label = LabelFactory()
+val Label get() = LabelFactory()
 
 class LabelFactory(val defaults: Map<String, Any>? = null) : TagName("label"), ElementFactory<LabelFactory> {
     override fun with(defaults: Map<String, Any>) = LabelFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7351,7 +7351,7 @@ class LabelFactory(val defaults: Map<String, Any>? = null) : TagName("label"), E
     )
 }
 
-val Legend = LegendFactory()
+val Legend get() = LegendFactory()
 
 class LegendFactory(val defaults: Map<String, Any>? = null) : TagName("legend"), ElementFactory<LegendFactory> {
     override fun with(defaults: Map<String, Any>) = LegendFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7479,7 +7479,7 @@ class LegendFactory(val defaults: Map<String, Any>? = null) : TagName("legend"),
     )
 }
 
-val Li = LiFactory()
+val Li get() = LiFactory()
 
 class LiFactory(val defaults: Map<String, Any>? = null) : TagName("li"), ElementFactory<LiFactory> {
     override fun with(defaults: Map<String, Any>) = LiFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7609,7 +7609,7 @@ class LiFactory(val defaults: Map<String, Any>? = null) : TagName("li"), Element
     )
 }
 
-val Link = LinkFactory()
+val Link get() = LinkFactory()
 
 class LinkFactory(val defaults: Map<String, Any>? = null) : TagName("link"), ElementFactory<LinkFactory> {
     override fun with(defaults: Map<String, Any>) = LinkFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7749,7 +7749,7 @@ class LinkFactory(val defaults: Map<String, Any>? = null) : TagName("link"), Ele
     )
 }
 
-val Main = MainFactory()
+val Main get() = MainFactory()
 
 class MainFactory(val defaults: Map<String, Any>? = null) : TagName("main"), ElementFactory<MainFactory> {
     override fun with(defaults: Map<String, Any>) = MainFactory((this.defaults ?: emptyMap()) + defaults)
@@ -7877,7 +7877,7 @@ class MainFactory(val defaults: Map<String, Any>? = null) : TagName("main"), Ele
     )
 }
 
-val Map = MapFactory()
+val Map get() = MapFactory()
 
 class MapFactory(val defaults: Map<String, Any>? = null) : TagName("map"), ElementFactory<MapFactory> {
     override fun with(defaults: Map<String, Any>) = MapFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8007,7 +8007,7 @@ class MapFactory(val defaults: Map<String, Any>? = null) : TagName("map"), Eleme
     )
 }
 
-val Mark = MarkFactory()
+val Mark get() = MarkFactory()
 
 class MarkFactory(val defaults: Map<String, Any>? = null) : TagName("mark"), ElementFactory<MarkFactory> {
     override fun with(defaults: Map<String, Any>) = MarkFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8135,7 +8135,7 @@ class MarkFactory(val defaults: Map<String, Any>? = null) : TagName("mark"), Ele
     )
 }
 
-val Meta = MetaFactory()
+val Meta get() = MetaFactory()
 
 class MetaFactory(val defaults: Map<String, Any>? = null) : TagName("meta"), ElementFactory<MetaFactory> {
     override fun with(defaults: Map<String, Any>) = MetaFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8271,7 +8271,7 @@ class MetaFactory(val defaults: Map<String, Any>? = null) : TagName("meta"), Ele
     )
 }
 
-val Meter = MeterFactory()
+val Meter get() = MeterFactory()
 
 class MeterFactory(val defaults: Map<String, Any>? = null) : TagName("meter"), ElementFactory<MeterFactory> {
     override fun with(defaults: Map<String, Any>) = MeterFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8413,7 +8413,7 @@ class MeterFactory(val defaults: Map<String, Any>? = null) : TagName("meter"), E
     )
 }
 
-val Nav = NavFactory()
+val Nav get() = NavFactory()
 
 class NavFactory(val defaults: Map<String, Any>? = null) : TagName("nav"), ElementFactory<NavFactory> {
     override fun with(defaults: Map<String, Any>) = NavFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8541,7 +8541,7 @@ class NavFactory(val defaults: Map<String, Any>? = null) : TagName("nav"), Eleme
     )
 }
 
-val Noscript = NoscriptFactory()
+val Noscript get() = NoscriptFactory()
 
 class NoscriptFactory(val defaults: Map<String, Any>? = null) : TagName("noscript"), ElementFactory<NoscriptFactory> {
     override fun with(defaults: Map<String, Any>) = NoscriptFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8669,7 +8669,7 @@ class NoscriptFactory(val defaults: Map<String, Any>? = null) : TagName("noscrip
     )
 }
 
-val Object = ObjectFactory()
+val Object get() = ObjectFactory()
 
 class ObjectFactory(val defaults: Map<String, Any>? = null) : TagName("object"), ElementFactory<ObjectFactory> {
     override fun with(defaults: Map<String, Any>) = ObjectFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8811,7 +8811,7 @@ class ObjectFactory(val defaults: Map<String, Any>? = null) : TagName("object"),
     )
 }
 
-val Ol = OlFactory()
+val Ol get() = OlFactory()
 
 class OlFactory(val defaults: Map<String, Any>? = null) : TagName("ol"), ElementFactory<OlFactory> {
     override fun with(defaults: Map<String, Any>) = OlFactory((this.defaults ?: emptyMap()) + defaults)
@@ -8945,7 +8945,7 @@ class OlFactory(val defaults: Map<String, Any>? = null) : TagName("ol"), Element
     )
 }
 
-val Optgroup = OptgroupFactory()
+val Optgroup get() = OptgroupFactory()
 
 class OptgroupFactory(val defaults: Map<String, Any>? = null) : TagName("optgroup"), ElementFactory<OptgroupFactory> {
     override fun with(defaults: Map<String, Any>) = OptgroupFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9077,7 +9077,7 @@ class OptgroupFactory(val defaults: Map<String, Any>? = null) : TagName("optgrou
     )
 }
 
-val Option = OptionFactory()
+val Option get() = OptionFactory()
 
 class OptionFactory(val defaults: Map<String, Any>? = null) : TagName("option"), ElementFactory<OptionFactory> {
     override fun with(defaults: Map<String, Any>) = OptionFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9213,7 +9213,7 @@ class OptionFactory(val defaults: Map<String, Any>? = null) : TagName("option"),
     )
 }
 
-val Output = OutputFactory()
+val Output get() = OutputFactory()
 
 class OutputFactory(val defaults: Map<String, Any>? = null) : TagName("output"), ElementFactory<OutputFactory> {
     override fun with(defaults: Map<String, Any>) = OutputFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9347,7 +9347,7 @@ class OutputFactory(val defaults: Map<String, Any>? = null) : TagName("output"),
     )
 }
 
-val P = PFactory()
+val P get() = PFactory()
 
 class PFactory(val defaults: Map<String, Any>? = null) : TagName("p"), ElementFactory<PFactory> {
     override fun with(defaults: Map<String, Any>) = PFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9475,7 +9475,7 @@ class PFactory(val defaults: Map<String, Any>? = null) : TagName("p"), ElementFa
     )
 }
 
-val Param = ParamFactory()
+val Param get() = ParamFactory()
 
 class ParamFactory(val defaults: Map<String, Any>? = null) : TagName("param"), ElementFactory<ParamFactory> {
     override fun with(defaults: Map<String, Any>) = ParamFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9607,7 +9607,7 @@ class ParamFactory(val defaults: Map<String, Any>? = null) : TagName("param"), E
     )
 }
 
-val Path = PathFactory()
+val Path get() = PathFactory()
 
 class PathFactory(val defaults: Map<String, Any>? = null) : TagName("path"), ElementFactory<PathFactory> {
     override fun with(defaults: Map<String, Any>) = PathFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9731,7 +9731,7 @@ class PathFactory(val defaults: Map<String, Any>? = null) : TagName("path"), Ele
     )
 }
 
-val Picture = PictureFactory()
+val Picture get() = PictureFactory()
 
 class PictureFactory(val defaults: Map<String, Any>? = null) : TagName("picture"), ElementFactory<PictureFactory> {
     override fun with(defaults: Map<String, Any>) = PictureFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9859,7 +9859,7 @@ class PictureFactory(val defaults: Map<String, Any>? = null) : TagName("picture"
     )
 }
 
-val Pre = PreFactory()
+val Pre get() = PreFactory()
 
 class PreFactory(val defaults: Map<String, Any>? = null) : TagName("pre"), ElementFactory<PreFactory> {
     override fun with(defaults: Map<String, Any>) = PreFactory((this.defaults ?: emptyMap()) + defaults)
@@ -9987,7 +9987,7 @@ class PreFactory(val defaults: Map<String, Any>? = null) : TagName("pre"), Eleme
     )
 }
 
-val Progress = ProgressFactory()
+val Progress get() = ProgressFactory()
 
 class ProgressFactory(val defaults: Map<String, Any>? = null) : TagName("progress"), ElementFactory<ProgressFactory> {
     override fun with(defaults: Map<String, Any>) = ProgressFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10119,7 +10119,7 @@ class ProgressFactory(val defaults: Map<String, Any>? = null) : TagName("progres
     )
 }
 
-val Q = QFactory()
+val Q get() = QFactory()
 
 class QFactory(val defaults: Map<String, Any>? = null) : TagName("q"), ElementFactory<QFactory> {
     override fun with(defaults: Map<String, Any>) = QFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10249,7 +10249,7 @@ class QFactory(val defaults: Map<String, Any>? = null) : TagName("q"), ElementFa
     )
 }
 
-val Rp = RpFactory()
+val Rp get() = RpFactory()
 
 class RpFactory(val defaults: Map<String, Any>? = null) : TagName("rp"), ElementFactory<RpFactory> {
     override fun with(defaults: Map<String, Any>) = RpFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10377,7 +10377,7 @@ class RpFactory(val defaults: Map<String, Any>? = null) : TagName("rp"), Element
     )
 }
 
-val Rt = RtFactory()
+val Rt get() = RtFactory()
 
 class RtFactory(val defaults: Map<String, Any>? = null) : TagName("rt"), ElementFactory<RtFactory> {
     override fun with(defaults: Map<String, Any>) = RtFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10505,7 +10505,7 @@ class RtFactory(val defaults: Map<String, Any>? = null) : TagName("rt"), Element
     )
 }
 
-val Ruby = RubyFactory()
+val Ruby get() = RubyFactory()
 
 class RubyFactory(val defaults: Map<String, Any>? = null) : TagName("ruby"), ElementFactory<RubyFactory> {
     override fun with(defaults: Map<String, Any>) = RubyFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10633,7 +10633,7 @@ class RubyFactory(val defaults: Map<String, Any>? = null) : TagName("ruby"), Ele
     )
 }
 
-val S = SFactory()
+val S get() = SFactory()
 
 class SFactory(val defaults: Map<String, Any>? = null) : TagName("s"), ElementFactory<SFactory> {
     override fun with(defaults: Map<String, Any>) = SFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10761,7 +10761,7 @@ class SFactory(val defaults: Map<String, Any>? = null) : TagName("s"), ElementFa
     )
 }
 
-val Samp = SampFactory()
+val Samp get() = SampFactory()
 
 class SampFactory(val defaults: Map<String, Any>? = null) : TagName("samp"), ElementFactory<SampFactory> {
     override fun with(defaults: Map<String, Any>) = SampFactory((this.defaults ?: emptyMap()) + defaults)
@@ -10889,7 +10889,7 @@ class SampFactory(val defaults: Map<String, Any>? = null) : TagName("samp"), Ele
     )
 }
 
-val Script = ScriptFactory()
+val Script get() = ScriptFactory()
 
 class ScriptFactory(val defaults: Map<String, Any>? = null) : TagName("script"), ElementFactory<ScriptFactory> {
     override fun with(defaults: Map<String, Any>) = ScriptFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11027,7 +11027,7 @@ class ScriptFactory(val defaults: Map<String, Any>? = null) : TagName("script"),
     )
 }
 
-val Section = SectionFactory()
+val Section get() = SectionFactory()
 
 class SectionFactory(val defaults: Map<String, Any>? = null) : TagName("section"), ElementFactory<SectionFactory> {
     override fun with(defaults: Map<String, Any>) = SectionFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11155,7 +11155,7 @@ class SectionFactory(val defaults: Map<String, Any>? = null) : TagName("section"
     )
 }
 
-val Select = SelectFactory()
+val Select get() = SelectFactory()
 
 class SelectFactory(val defaults: Map<String, Any>? = null) : TagName("select"), ElementFactory<SelectFactory> {
     override fun with(defaults: Map<String, Any>) = SelectFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11299,7 +11299,7 @@ class SelectFactory(val defaults: Map<String, Any>? = null) : TagName("select"),
     )
 }
 
-val Small = SmallFactory()
+val Small get() = SmallFactory()
 
 class SmallFactory(val defaults: Map<String, Any>? = null) : TagName("small"), ElementFactory<SmallFactory> {
     override fun with(defaults: Map<String, Any>) = SmallFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11427,7 +11427,7 @@ class SmallFactory(val defaults: Map<String, Any>? = null) : TagName("small"), E
     )
 }
 
-val Source = SourceFactory()
+val Source get() = SourceFactory()
 
 class SourceFactory(val defaults: Map<String, Any>? = null) : TagName("source"), ElementFactory<SourceFactory> {
     override fun with(defaults: Map<String, Any>) = SourceFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11563,7 +11563,7 @@ class SourceFactory(val defaults: Map<String, Any>? = null) : TagName("source"),
     )
 }
 
-val Span = SpanFactory()
+val Span get() = SpanFactory()
 
 class SpanFactory(val defaults: Map<String, Any>? = null) : TagName("span"), ElementFactory<SpanFactory> {
     override fun with(defaults: Map<String, Any>) = SpanFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11691,7 +11691,7 @@ class SpanFactory(val defaults: Map<String, Any>? = null) : TagName("span"), Ele
     )
 }
 
-val Strong = StrongFactory()
+val Strong get() = StrongFactory()
 
 class StrongFactory(val defaults: Map<String, Any>? = null) : TagName("strong"), ElementFactory<StrongFactory> {
     override fun with(defaults: Map<String, Any>) = StrongFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11819,7 +11819,7 @@ class StrongFactory(val defaults: Map<String, Any>? = null) : TagName("strong"),
     )
 }
 
-val Style = StyleFactory()
+val Style get() = StyleFactory()
 
 class StyleFactory(val defaults: Map<String, Any>? = null) : TagName("style"), ElementFactory<StyleFactory> {
     override fun with(defaults: Map<String, Any>) = StyleFactory((this.defaults ?: emptyMap()) + defaults)
@@ -11951,7 +11951,7 @@ class StyleFactory(val defaults: Map<String, Any>? = null) : TagName("style"), E
     )
 }
 
-val Sub = SubFactory()
+val Sub get() = SubFactory()
 
 class SubFactory(val defaults: Map<String, Any>? = null) : TagName("sub"), ElementFactory<SubFactory> {
     override fun with(defaults: Map<String, Any>) = SubFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12079,7 +12079,7 @@ class SubFactory(val defaults: Map<String, Any>? = null) : TagName("sub"), Eleme
     )
 }
 
-val Summary = SummaryFactory()
+val Summary get() = SummaryFactory()
 
 class SummaryFactory(val defaults: Map<String, Any>? = null) : TagName("summary"), ElementFactory<SummaryFactory> {
     override fun with(defaults: Map<String, Any>) = SummaryFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12207,7 +12207,7 @@ class SummaryFactory(val defaults: Map<String, Any>? = null) : TagName("summary"
     )
 }
 
-val Sup = SupFactory()
+val Sup get() = SupFactory()
 
 class SupFactory(val defaults: Map<String, Any>? = null) : TagName("sup"), ElementFactory<SupFactory> {
     override fun with(defaults: Map<String, Any>) = SupFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12335,7 +12335,7 @@ class SupFactory(val defaults: Map<String, Any>? = null) : TagName("sup"), Eleme
     )
 }
 
-val Svg = SvgFactory()
+val Svg get() = SvgFactory()
 
 class SvgFactory(val defaults: Map<String, Any>? = null) : TagName("svg"), ElementFactory<SvgFactory> {
     override fun with(defaults: Map<String, Any>) = SvgFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12467,7 +12467,7 @@ class SvgFactory(val defaults: Map<String, Any>? = null) : TagName("svg"), Eleme
     )
 }
 
-val Table = TableFactory()
+val Table get() = TableFactory()
 
 class TableFactory(val defaults: Map<String, Any>? = null) : TagName("table"), ElementFactory<TableFactory> {
     override fun with(defaults: Map<String, Any>) = TableFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12595,7 +12595,7 @@ class TableFactory(val defaults: Map<String, Any>? = null) : TagName("table"), E
     )
 }
 
-val Tbody = TbodyFactory()
+val Tbody get() = TbodyFactory()
 
 class TbodyFactory(val defaults: Map<String, Any>? = null) : TagName("tbody"), ElementFactory<TbodyFactory> {
     override fun with(defaults: Map<String, Any>) = TbodyFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12723,7 +12723,7 @@ class TbodyFactory(val defaults: Map<String, Any>? = null) : TagName("tbody"), E
     )
 }
 
-val Td = TdFactory()
+val Td get() = TdFactory()
 
 class TdFactory(val defaults: Map<String, Any>? = null) : TagName("td"), ElementFactory<TdFactory> {
     override fun with(defaults: Map<String, Any>) = TdFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12857,7 +12857,7 @@ class TdFactory(val defaults: Map<String, Any>? = null) : TagName("td"), Element
     )
 }
 
-val Template = TemplateFactory()
+val Template get() = TemplateFactory()
 
 class TemplateFactory(val defaults: Map<String, Any>? = null) : TagName("template"), ElementFactory<TemplateFactory> {
     override fun with(defaults: Map<String, Any>) = TemplateFactory((this.defaults ?: emptyMap()) + defaults)
@@ -12985,7 +12985,7 @@ class TemplateFactory(val defaults: Map<String, Any>? = null) : TagName("templat
     )
 }
 
-val Textarea = TextareaFactory()
+val Textarea get() = TextareaFactory()
 
 class TextareaFactory(val defaults: Map<String, Any>? = null) : TagName("textarea"), ElementFactory<TextareaFactory> {
     override fun with(defaults: Map<String, Any>) = TextareaFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13137,7 +13137,7 @@ class TextareaFactory(val defaults: Map<String, Any>? = null) : TagName("textare
     )
 }
 
-val Tfoot = TfootFactory()
+val Tfoot get() = TfootFactory()
 
 class TfootFactory(val defaults: Map<String, Any>? = null) : TagName("tfoot"), ElementFactory<TfootFactory> {
     override fun with(defaults: Map<String, Any>) = TfootFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13265,7 +13265,7 @@ class TfootFactory(val defaults: Map<String, Any>? = null) : TagName("tfoot"), E
     )
 }
 
-val Th = ThFactory()
+val Th get() = ThFactory()
 
 class ThFactory(val defaults: Map<String, Any>? = null) : TagName("th"), ElementFactory<ThFactory> {
     override fun with(defaults: Map<String, Any>) = ThFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13403,7 +13403,7 @@ class ThFactory(val defaults: Map<String, Any>? = null) : TagName("th"), Element
     )
 }
 
-val Thead = TheadFactory()
+val Thead get() = TheadFactory()
 
 class TheadFactory(val defaults: Map<String, Any>? = null) : TagName("thead"), ElementFactory<TheadFactory> {
     override fun with(defaults: Map<String, Any>) = TheadFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13531,7 +13531,7 @@ class TheadFactory(val defaults: Map<String, Any>? = null) : TagName("thead"), E
     )
 }
 
-val Time = TimeFactory()
+val Time get() = TimeFactory()
 
 class TimeFactory(val defaults: Map<String, Any>? = null) : TagName("time"), ElementFactory<TimeFactory> {
     override fun with(defaults: Map<String, Any>) = TimeFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13661,7 +13661,7 @@ class TimeFactory(val defaults: Map<String, Any>? = null) : TagName("time"), Ele
     )
 }
 
-val Title = TitleFactory()
+val Title get() = TitleFactory()
 
 class TitleFactory(val defaults: Map<String, Any>? = null) : TagName("title"), ElementFactory<TitleFactory> {
     override fun with(defaults: Map<String, Any>) = TitleFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13789,7 +13789,7 @@ class TitleFactory(val defaults: Map<String, Any>? = null) : TagName("title"), E
     )
 }
 
-val Tr = TrFactory()
+val Tr get() = TrFactory()
 
 class TrFactory(val defaults: Map<String, Any>? = null) : TagName("tr"), ElementFactory<TrFactory> {
     override fun with(defaults: Map<String, Any>) = TrFactory((this.defaults ?: emptyMap()) + defaults)
@@ -13917,7 +13917,7 @@ class TrFactory(val defaults: Map<String, Any>? = null) : TagName("tr"), Element
     )
 }
 
-val Track = TrackFactory()
+val Track get() = TrackFactory()
 
 class TrackFactory(val defaults: Map<String, Any>? = null) : TagName("track"), ElementFactory<TrackFactory> {
     override fun with(defaults: Map<String, Any>) = TrackFactory((this.defaults ?: emptyMap()) + defaults)
@@ -14055,7 +14055,7 @@ class TrackFactory(val defaults: Map<String, Any>? = null) : TagName("track"), E
     )
 }
 
-val U = UFactory()
+val U get() = UFactory()
 
 class UFactory(val defaults: Map<String, Any>? = null) : TagName("u"), ElementFactory<UFactory> {
     override fun with(defaults: Map<String, Any>) = UFactory((this.defaults ?: emptyMap()) + defaults)
@@ -14183,7 +14183,7 @@ class UFactory(val defaults: Map<String, Any>? = null) : TagName("u"), ElementFa
     )
 }
 
-val Ul = UlFactory()
+val Ul get() = UlFactory()
 
 class UlFactory(val defaults: Map<String, Any>? = null) : TagName("ul"), ElementFactory<UlFactory> {
     override fun with(defaults: Map<String, Any>) = UlFactory((this.defaults ?: emptyMap()) + defaults)
@@ -14311,7 +14311,7 @@ class UlFactory(val defaults: Map<String, Any>? = null) : TagName("ul"), Element
     )
 }
 
-val Var = VarFactory()
+val Var get() = VarFactory()
 
 class VarFactory(val defaults: Map<String, Any>? = null) : TagName("var"), ElementFactory<VarFactory> {
     override fun with(defaults: Map<String, Any>) = VarFactory((this.defaults ?: emptyMap()) + defaults)
@@ -14439,7 +14439,7 @@ class VarFactory(val defaults: Map<String, Any>? = null) : TagName("var"), Eleme
     )
 }
 
-val Video = VideoFactory()
+val Video get() = VideoFactory()
 
 class VideoFactory(val defaults: Map<String, Any>? = null) : TagName("video"), ElementFactory<VideoFactory> {
     override fun with(defaults: Map<String, Any>) = VideoFactory((this.defaults ?: emptyMap()) + defaults)
@@ -14585,7 +14585,7 @@ class VideoFactory(val defaults: Map<String, Any>? = null) : TagName("video"), E
     )
 }
 
-val Wbr = WbrFactory()
+val Wbr get() = WbrFactory()
 
 class WbrFactory(val defaults: Map<String, Any>? = null) : TagName("wbr"), ElementFactory<WbrFactory> {
     override fun with(defaults: Map<String, Any>) = WbrFactory((this.defaults ?: emptyMap()) + defaults)

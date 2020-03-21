@@ -5,14 +5,18 @@ package io.akryl.dom.css.properties
 import io.akryl.dom.css.PropertyBuilder
 import io.akryl.dom.css.StyleProperty
 
-object font : PropertyBuilder("font") {
+val font get() = fontPropertyBuilder()
+
+class fontPropertyBuilder : PropertyBuilder("font") {
     operator fun invoke(size: Linear, vararg family: String): StyleProperty {
         val familyStr = family.joinToString { "'$it'" }
         return this("$size $familyStr")
     }
 }
 
-object fontFamily : PropertyBuilder("fontFamily") {
+val fontFamily get() = fontFamilyPropertyBuilder()
+
+class fontFamilyPropertyBuilder : PropertyBuilder("fontFamily") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
 

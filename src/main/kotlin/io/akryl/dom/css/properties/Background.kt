@@ -4,13 +4,17 @@ package io.akryl.dom.css.properties
 
 import io.akryl.dom.css.PropertyBuilder
 
-object background : PropertyBuilder("background") {
+val background get() = backgroundPropertyBuilder()
+
+class backgroundPropertyBuilder : PropertyBuilder("background") {
   fun none() = this("none")
   fun initial() = this("initial")
   fun inherit() = this("inherit")
 }
 
-object image : PropertyBuilder("image") {
+val image get() = imagePropertyBuilder()
+
+class imagePropertyBuilder : PropertyBuilder("image") {
   fun none() = this("none")
   fun initial() = this("initial")
   fun inherit() = this("inherit")
@@ -18,7 +22,9 @@ object image : PropertyBuilder("image") {
   fun url(value: String) = this("url('$value')")
 }
 
-object backgroundSize : PropertyBuilder("backgroundSize") {
+val backgroundSize get() = backgroundSizePropertyBuilder()
+
+class backgroundSizePropertyBuilder : PropertyBuilder("backgroundSize") {
   fun auto() = this("auto")
   fun cover() = this("cover")
   fun contain() = this("contain")
@@ -29,7 +35,9 @@ object backgroundSize : PropertyBuilder("backgroundSize") {
   operator fun invoke(width: Linear, height: Linear) = this("$width $height")
 }
 
-object backgroundRepeat : PropertyBuilder("backgroundRepeat") {
+val backgroundRepeat get() = backgroundRepeatPropertyBuilder()
+
+class backgroundRepeatPropertyBuilder : PropertyBuilder("backgroundRepeat") {
   fun repeat() = this("repeat")
   fun repeatX() = this("repeat-x")
   fun repeatY() = this("repeat-y")
@@ -38,7 +46,9 @@ object backgroundRepeat : PropertyBuilder("backgroundRepeat") {
   fun inherit() = this("inherit")
 }
 
-object backgroundImage : PropertyBuilder("backgroundImage") {
+val backgroundImage get() = backgroundImagePropertyBuilder()
+
+class backgroundImagePropertyBuilder : PropertyBuilder("backgroundImage") {
   fun none() = this("none")
   fun initial() = this("initial")
   fun inherit() = this("inherit")

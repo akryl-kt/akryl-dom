@@ -60,7 +60,7 @@ data class TransformProperty(override val value: String?) : AbstractStylePropert
     }
 }
 
-val transform = TransformProperty(null)
+val transform get() = TransformProperty(null)
 
 class Angle(val value: String) {
     companion object {
@@ -90,7 +90,9 @@ val Number.grad get() = Angle("${this}grad")
 val Number.rad get() = Angle("${this}rad")
 val Number.turn get() = Angle("${this}turn")
 
-object transformOrigin : PropertyBuilder("transformOrigin") {
+val transformOrigin get() = transformOriginPropertyBuilder()
+
+class transformOriginPropertyBuilder : PropertyBuilder("transformOrigin") {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
     fun unset() = this("unset")

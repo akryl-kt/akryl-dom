@@ -15,5 +15,5 @@ class InsetsPropertyBuilder(name: String) : PropertyBuilder(name) {
     operator fun invoke(top: Linear, right: Linear, bottom: Linear, left: Linear) = this("$top $right $bottom $left")
 }
 
-val margin = InsetsPropertyBuilder("margin")
-val padding = InsetsPropertyBuilder("padding")
+val margin get() = InsetsPropertyBuilder("margin")
+val padding get() = InsetsPropertyBuilder("padding")
