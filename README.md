@@ -52,6 +52,8 @@ If an element contains no attributes, pass children as varargs.
 
 ```kotlin
 // Kotlin
+import io.akryl.dom.html.*
+
 Div(id = "root", children = listOf(
     Header(text = "text"),
     Div(className = "inner", child = Img(src = "example.png")),
@@ -77,6 +79,11 @@ Div(id = "root", children = listOf(
 Use `ReactDom.render` to apply elements or components to document.
 
 ```kotlin
+import io.akryl.component
+import io.akryl.dom.html.*
+import react_dom.ReactDom
+import kotlin.browser.document
+
 fun app() = component {
     Div(text = "Hello, World!")
 }
@@ -135,6 +142,10 @@ It works similar to libraries like [css-modules](https://github.com/css-modules/
 
 ```kotlin
 // Kotlin
+import io.akryl.dom.css.css
+import io.akryl.dom.css.invoke
+import io.akryl.dom.css.properties.*
+
 val foo by css(
     color.red()
 )
@@ -143,7 +154,7 @@ val bar by css(
     display.flex(),
     
     hover(
-        background.gray()
+        backgroundColor.gray()
     ),
     
     foo(
@@ -178,9 +189,12 @@ It is something like [styled-components](https://github.com/styled-components/st
 
 ```kotlin
 // Kotlin
+import io.akryl.dom.css.properties.*
+import io.akryl.dom.html.*
+
 Div(
     css = listOf(
-        background.black(),
+        backgroundColor.black(),
         color.white()
     ),
     text = "Inline CSS example"
@@ -220,9 +234,12 @@ Example:
 
 ```kotlin
 // Kotlin
+import io.akryl.dom.css.properties.*
+import io.akryl.dom.html.*
+
 Div(
     style = listOf(
-        transform.transition(100.px, 200.px),
+        transform.translate(100.px, 200.px),
         willChange("transform")
     ),
     text = "div with inline styles"
