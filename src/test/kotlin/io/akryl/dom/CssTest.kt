@@ -2,8 +2,8 @@ package io.akryl.dom
 
 import io.akryl.dom.css.*
 import io.akryl.dom.css.properties.*
-import io.akryl.dom.html.Div
-import io.akryl.dom.html.Span
+import io.akryl.dom.html.div
+import io.akryl.dom.html.span
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.asList
 import react_test_renderer.ReactTestRenderer
@@ -22,7 +22,7 @@ class CssTest {
     @Test
     fun testStyledDiv() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
+            div(
                 style = listOf(
                     StyleProperty("width", "100px"),
                     StyleProperty("display", "grid"),
@@ -60,10 +60,10 @@ class CssTest {
         val css3 = ArrayList(css2)
 
         val root = ReactTestRenderer.aktCreate {
-            Div(
-                Div(css = css1),
-                Span(css = css2),
-                Span(css = css3)
+            div(
+                div(css = css1),
+                span(css = css2),
+                span(css = css3)
             )
         }
 
@@ -95,7 +95,7 @@ class CssTest {
         )
 
         val root = ReactTestRenderer.aktCreate {
-            Div(css = css, className = testClass)
+            div(css = css, className = testClass)
         }
 
         val json = root.toJSON().asDynamic()
@@ -116,7 +116,7 @@ class CssTest {
         )
 
         val root = ReactTestRenderer.aktCreate {
-            Div(css = css)
+            div(css = css)
         }
 
         val json = root.toJSON().asDynamic()
@@ -175,7 +175,7 @@ class CssTest {
     @Test
     fun testCssTyping() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
+            div(
                 css = listOf(
                     transform.translateY(10.px).skew(45.deg, 30.deg),
                     boxShadow.add(10.px, 20.px, 30.px, 40.px, Color.black),
@@ -271,7 +271,7 @@ class CssTest {
         selector = tag("div")[foo]()
         assertEquals("& div.foo", selector.selector)
 
-        selector = Div[foo]()
+        selector = div[foo]()
         assertEquals("& div.foo", selector.selector)
     }
 

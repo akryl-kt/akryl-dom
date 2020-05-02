@@ -10,14 +10,14 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 private fun componentWithHtml() = component {
-    Div(className = "root", children = listOf(
-        Div(className = "item", children = listOf(
-            Img(src = "first.svg", className = "item-image"),
-            Span(children = listOf(Text("First Item")))
+    div(className = "root", children = listOf(
+        div(className = "item", children = listOf(
+            img(src = "first.svg", className = "item-image"),
+            span(children = listOf(text("First Item")))
         )),
-        Div(className = "item", children = listOf(
-            Img(src = "second.svg", className = "item-image"),
-            Span(children = listOf(Text("Second Item")))
+        div(className = "item", children = listOf(
+            img(src = "second.svg", className = "item-image"),
+            span(children = listOf(text("Second Item")))
         ))
     ))
 }
@@ -26,9 +26,9 @@ class HtmlTest {
     @Test
     fun testDivWithChildrenVararg() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
-                Text("Hello, World!"),
-                Text("Second child")
+            div(
+                text("Hello, World!"),
+                text("Second child")
             )
         }
 
@@ -48,10 +48,10 @@ class HtmlTest {
     @Test
     fun testDivWithChildrenProp() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
+            div(
                 children = listOf(
-                    Text("Hello, World!"),
-                    Text("Second child")
+                    text("Hello, World!"),
+                    text("Second child")
                 )
             )
         }
@@ -72,8 +72,8 @@ class HtmlTest {
     @Test
     fun testDivWithChildProp() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
-                child = Span(Text("Hello, World!"))
+            div(
+                child = span(text("Hello, World!"))
             )
         }
 
@@ -98,7 +98,7 @@ class HtmlTest {
     @Test
     fun testDivWithTextProp() {
         val root = ReactTestRenderer.aktCreate {
-            Div(
+            div(
                 text = "Hello, World!"
             )
         }
@@ -118,7 +118,7 @@ class HtmlTest {
     @Test
     fun testEmptyDiv() {
         val root = ReactTestRenderer.aktCreate {
-            Div()
+            div()
         }
 
         assertJsonEquals(
@@ -134,7 +134,7 @@ class HtmlTest {
     @Test
     fun testText() {
         val root = ReactTestRenderer.aktCreate {
-            Text("text node")
+            text("text node")
         }
 
         assertJsonEquals(
@@ -146,7 +146,7 @@ class HtmlTest {
     @Test
     fun testDivWithProps() {
         val root = ReactTestRenderer.aktCreate {
-            Div(id = "foo", title = "bar", className = "baz")
+            div(id = "foo", title = "bar", className = "baz")
         }
 
         assertJsonEquals(
@@ -277,7 +277,7 @@ class HtmlTest {
         val root = ReactTestRenderer.aktCreate {
             div(
                 children = listOf(
-                    Text("Hello, World!")
+                    text("Hello, World!")
                 ),
                 draggable = true
             )
