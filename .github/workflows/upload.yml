@@ -1,9 +1,9 @@
-name: Test & Upload
+name: Upload
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - release-*
 
 jobs:
   deploy:
