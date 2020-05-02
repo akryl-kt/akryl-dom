@@ -1,8 +1,8 @@
 package io.akryl.dom
 
 import io.akryl.component
-import io.akryl.dom.html.Div
-import io.akryl.dom.html.Text
+import io.akryl.dom.html.div
+import io.akryl.dom.html.text
 import react_dom.ReactDom
 import kotlin.browser.document
 import kotlin.test.Test
@@ -10,13 +10,13 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 private fun testComponent() = component {
-    Div(Text("Text from component"))
+    div(text("Text from component"))
 }
 
 class BrowserRenderTest {
     @Test
     fun render() {
-        val element = Div(Text("Hello, World!"))
+        val element = div(text("Hello, World!"))
         val result = ReactDom.render(element, document.body)
         assertEquals(document.body, result.parentElement)
         assertEquals("<div>Hello, World!</div>", document.body?.innerHTML)
@@ -25,7 +25,7 @@ class BrowserRenderTest {
     @Test
     fun renderWithCallback() {
         var called = false
-        val element = Div(Text("Hello, World!"))
+        val element = div(text("Hello, World!"))
         ReactDom.render(element, document.body) { called = true }
         assertTrue(called)
     }
