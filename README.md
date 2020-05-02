@@ -39,7 +39,7 @@ To create a Virtual DOM element, call a function like `Div`, `Span` or `Img` and
 
 ```kotlin
 // Kotlin
-Img(className = "my-image", src = "example.png")
+img(className = "my-image", src = "example.png")
 ```
 
 ```JSX
@@ -54,12 +54,12 @@ If an element contains no attributes, pass children as varargs.
 // Kotlin
 import io.akryl.dom.html.*
 
-Div(id = "root", children = listOf(
-    Header(text = "text"),
-    Div(className = "inner", child = Img(src = "example.png")),
-    Footer(
-        P(text = "first paragraph"),
-        P(text = "second paragraph")
+div(id = "root", children = listOf(
+    header(text = "text"),
+    div(className = "inner", child = img(src = "example.png")),
+    footer(
+        p(text = "first paragraph"),
+        p(text = "second paragraph")
     )
 ))
 ```
@@ -85,7 +85,7 @@ import react_dom.ReactDom
 import kotlin.browser.document
 
 fun app() = component {
-    Div(text = "Hello, World!")
+    div(text = "Hello, World!")
 }
 
 ReactDom.render(app(), document.getElementById("app"))
@@ -192,7 +192,7 @@ It is something like [styled-components](https://github.com/styled-components/st
 import io.akryl.dom.css.properties.*
 import io.akryl.dom.html.*
 
-Div(
+div(
     css = listOf(
         backgroundColor.black(),
         color.white()
@@ -237,7 +237,7 @@ Example:
 import io.akryl.dom.css.properties.*
 import io.akryl.dom.html.*
 
-Div(
+div(
     style = listOf(
         transform.translate(100.px, 200.px),
         willChange("transform")
