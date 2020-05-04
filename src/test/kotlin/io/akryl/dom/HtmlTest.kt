@@ -2,6 +2,7 @@ package io.akryl.dom
 
 import io.akryl.component
 import io.akryl.dom.html.*
+import react.ReactElement
 import react_test_renderer.ReactTestRenderer
 import react_test_renderer.aktCreate
 import utils.assertJsonEquals
@@ -331,5 +332,40 @@ class HtmlTest {
             ),
             root.toJSON()
         )
+    }
+
+    @Test
+    fun testEmptyConcatChildren() {
+        val actual = concatChildrenToArray(
+            listOf(),
+            null,
+            null
+        )
+
+        val expected = emptyArray<ReactElement<*>>()
+
+        assertJsonEquals(expected, actual)
+    }
+
+    @Test
+    fun testFilledConcatChildren() {
+        val first = div(className = "foo")
+        val second = div(className = "bar")
+        val third = img(src = "baz")
+
+        val actual = concatChildrenToArray(
+            listOf(first, second),
+            third,
+            "fourth"
+        )
+
+        val expected = arrayOf(
+            "fourth",
+            third,
+            first,
+            second
+        )
+
+        assertJsonEquals(expected, actual)
     }
 }

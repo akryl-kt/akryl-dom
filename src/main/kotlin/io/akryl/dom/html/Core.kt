@@ -61,6 +61,11 @@ inline fun concatChildren(children: Iterable<ReactElement<*>?>?, child: ReactEle
 }
 
 @Suppress("NOTHING_TO_INLINE")
+inline fun concatChildrenToArray(children: Iterable<ReactElement<*>?>?, child: ReactElement<*>?, text: String?): Array<ReactElement<*>> {
+    return concatChildren(children, child, text)?.toTypedArray() ?: emptyArray()
+}
+
+@Suppress("NOTHING_TO_INLINE")
 inline fun concatStyle(css: CssStyle?, className: CharSequence?): String? {
     val cssClassName = cssRegistry.findOrCreateClassName(css)
     return listOfNotNull(className?.toString(), cssClassName)
