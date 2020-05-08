@@ -1,8 +1,10 @@
-name: Upload
+name: Snapshot
 
 on:
   push:
-    branch: [master]
+    branches: [master]
+    tags-ignore:
+      - release-*
 
 jobs:
   deploy:
