@@ -4,7 +4,10 @@ package io.akryl.dom.css.properties
 
 import io.akryl.dom.css.AbstractStyleProperty
 
-data class BoxShadow(override val value: String?) : AbstractStyleProperty() {
+data class BoxShadow(
+    override val value: String?,
+    override val important: Boolean = false
+) : AbstractStyleProperty() {
     override val key: String = "boxShadow"
 
     fun none() = this("none")

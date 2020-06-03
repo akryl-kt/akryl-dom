@@ -6,7 +6,10 @@ import io.akryl.dom.css.AbstractStyleProperty
 import io.akryl.dom.css.PropertyBuilder
 import io.akryl.dom.css.PropertyKey
 
-data class TransformProperty(override val value: String?) : AbstractStyleProperty(), PropertyKey {
+data class TransformProperty(
+    override val value: String?,
+    override val important: Boolean = false
+) : AbstractStyleProperty(), PropertyKey {
     override val key: String = "transform"
 
     fun none() = this("none")

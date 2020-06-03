@@ -5,7 +5,10 @@ package io.akryl.dom.css.properties
 import io.akryl.dom.css.AbstractStyleProperty
 import io.akryl.dom.css.PropertyKey
 
-data class Transition(override val value: String?) : AbstractStyleProperty(), PropertyKey {
+data class Transition(
+    override val value: String?,
+    override val important: Boolean = false
+) : AbstractStyleProperty(), PropertyKey {
     override val key: String = "transition"
 
     fun initial() = this("initial")

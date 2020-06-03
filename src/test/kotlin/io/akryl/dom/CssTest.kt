@@ -348,6 +348,16 @@ class CssTest {
         )
     }
 
+    @Test
+    fun testImportant() {
+        val actual = boxShadow(10.px, 20.px, 30.px, 40.px, Color.red).important()
+        val expected = StyleProperty("boxShadow", "10px 20px 30px 40px red", true)
+        val expectedStr = "10px 20px 30px 40px red !important"
+
+        assertEquals(expected, actual)
+        assertEquals(actual.toStringOrNull(), expectedStr)
+    }
+
     private fun extractStyle(className: String): String? {
         return document.head
             ?.childNodes?.asList()
