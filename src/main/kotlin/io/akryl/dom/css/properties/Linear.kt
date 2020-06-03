@@ -50,13 +50,22 @@ class DimensionPropertyBuilder(name: String) : PropertyBuilder(name) {
     operator fun invoke(value: Linear) = this(value.toString())
 }
 
-class LinearPropertyBuilder(name: String) : PropertyBuilder(name) {
-    fun none() = this("none")
-    fun auto() = this("auto")
+open class LinearPropertyBuilder(name: String) : PropertyBuilder(name) {
     fun initial() = this("initial")
     fun inherit() = this("inherit")
+    fun unset() = this("unset")
 
     operator fun invoke(value: Linear) = this(value.toString())
+}
+
+class LinearAutoPropertyBuilder(name: String) : LinearPropertyBuilder(name) {
+    fun auto() = this("auto")
+}
+
+class LinearThicknessPropertyBuilder(name: String) : LinearPropertyBuilder(name) {
+    fun thin() = this("thin")
+    fun medium() = this("medium")
+    fun thick() = this("thick")
 }
 
 val Number.cm: Linear get() = Linear(this, "cm")       // Centimeter
@@ -77,33 +86,35 @@ val Number.inch: Linear get() = Linear(this, "in")     // Inch
 
 val borderBottomLeftRadius get() = LinearPropertyBuilder("borderBottomLeftRadius")
 val borderBottomRightRadius get() = LinearPropertyBuilder("borderBottomRightRadius")
-val borderBottomWidth get() = LinearPropertyBuilder("borderBottomWidth")
-val borderLeftWidth get() = LinearPropertyBuilder("borderLeftWidth")
 val borderRadius get() = LinearPropertyBuilder("borderRadius")
-val borderRightWidth get() = LinearPropertyBuilder("borderRightWidth")
 val borderTopLeftRadius get() = LinearPropertyBuilder("borderTopLeftRadius")
 val borderTopRightRadius get() = LinearPropertyBuilder("borderTopRightRadius")
-val borderTopWidth get() = LinearPropertyBuilder("borderTopWidth")
-val borderWidth get() = LinearPropertyBuilder("borderWidth")
-val bottom get() = LinearPropertyBuilder("bottom")
 val flexBasis get() = LinearPropertyBuilder("flexBasis")
 val fontSize get() = LinearPropertyBuilder("fontSize")
-val left get() = LinearPropertyBuilder("left")
-val marginBottom get() = LinearPropertyBuilder("marginBottom")
-val marginLeft get() = LinearPropertyBuilder("marginLeft")
-val marginRight get() = LinearPropertyBuilder("marginRight")
-val marginTop get() = LinearPropertyBuilder("marginTop")
-val maxHeight get() = LinearPropertyBuilder("maxHeight")
-val maxWidth get() = LinearPropertyBuilder("maxWidth")
-val minHeight get() = LinearPropertyBuilder("minHeight")
-val minWidth get() = LinearPropertyBuilder("minWidth")
-val outlineWidth get() = LinearPropertyBuilder("outlineWidth")
 val paddingBottom get() = LinearPropertyBuilder("paddingBottom")
 val paddingLeft get() = LinearPropertyBuilder("paddingLeft")
 val paddingRight get() = LinearPropertyBuilder("paddingRight")
 val paddingTop get() = LinearPropertyBuilder("paddingTop")
-val right get() = LinearPropertyBuilder("right")
-val top get() = LinearPropertyBuilder("top")
 
+val borderBottomWidth get() = LinearThicknessPropertyBuilder("borderBottomWidth")
+val borderLeftWidth get() = LinearThicknessPropertyBuilder("borderLeftWidth")
+val borderRightWidth get() = LinearThicknessPropertyBuilder("borderRightWidth")
+val borderTopWidth get() = LinearThicknessPropertyBuilder("borderTopWidth")
+val borderWidth get() = LinearThicknessPropertyBuilder("borderWidth")
+val outlineWidth get() = LinearThicknessPropertyBuilder("outlineWidth")
+
+val marginBottom get() = LinearAutoPropertyBuilder("marginBottom")
+val marginLeft get() = LinearAutoPropertyBuilder("marginLeft")
+val marginRight get() = LinearAutoPropertyBuilder("marginRight")
+val marginTop get() = LinearAutoPropertyBuilder("marginTop")
+val bottom get() = LinearAutoPropertyBuilder("bottom")
+val left get() = LinearAutoPropertyBuilder("left")
+val right get() = LinearAutoPropertyBuilder("right")
+val top get() = LinearAutoPropertyBuilder("top")
+
+val maxHeight get() = DimensionPropertyBuilder("maxHeight")
+val maxWidth get() = DimensionPropertyBuilder("maxWidth")
+val minHeight get() = DimensionPropertyBuilder("minHeight")
+val minWidth get() = DimensionPropertyBuilder("minWidth")
 val height get() = DimensionPropertyBuilder("height")
 val width get() = DimensionPropertyBuilder("width")
